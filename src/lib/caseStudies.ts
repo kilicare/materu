@@ -439,4 +439,84 @@ export const caseStudies: CaseStudy[] = [
     layout: 'featured',
     relatedProjects: ['saas-analytics', 'hospital-management'],
   },
+  {
+    id: 'pos-system',
+    title: 'Smart Restaurant & Retail POS System',
+    slug: 'pos-system',
+    category: 'business-system',
+    shortDescription: 'Modern point-of-sale platform with real-time inventory, kitchen display, and multi-branch sync',
+    fullDescription:
+      'An intuitive, cloud-connected Point-of-Sale (POS) system engineered for high-volume restaurants and retail businesses. Features instant order sync, offline resilience, payment gateway integrations, table management, and comprehensive sales analytics.',
+    imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
+    imageAlt: 'Restaurant POS System Interface',
+    heroImage: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80',
+    challenges: [
+      {
+        title: 'Slow Checkout & Long Queues',
+        description: 'Legacy POS hardware caused long customer wait times during peak dining hours.',
+      },
+      {
+        title: 'Stock Discrepancies',
+        description: 'Manual inventory tracking led to ingredient stockouts and revenue leakage.',
+      },
+      {
+        title: 'Disconnected Kitchen Operations',
+        description: 'Paper tickets between order counter and kitchen resulted in order errors and delays.',
+      },
+    ],
+    solutions: [
+      {
+        title: 'Touch-Optimized Terminal',
+        description: 'Fast, sub-second checkout interface with customizable quick-key layouts.',
+        icon: '💻',
+      },
+      {
+        title: 'Kitchen Display System (KDS)',
+        description: 'Instant order transmission to kitchen monitors with status tracking.',
+        icon: '🍳',
+      },
+      {
+        title: 'Automated Inventory Deductions',
+        description: 'Real-time ingredient tracking and automated supplier reorder alerts.',
+        icon: '📦',
+      },
+    ],
+    outcomes: [
+      {
+        metric: 'Checkout Speed',
+        value: '3x Faster',
+        description: 'Reduced average checkout time per customer from 45 seconds to 15 seconds.',
+      },
+      {
+        metric: 'Order Accuracy',
+        value: '99.8%',
+        description: 'Eliminated verbal/paper ticket mistakes in kitchen order prep.',
+      },
+      {
+        metric: 'Revenue Increase',
+        value: '+22%',
+        description: 'Faster table turnover and upsell prompts increased daily sales.',
+      },
+    ],
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'WebSockets', 'Electron', 'Stripe Terminal'],
+    features: [
+      'Touchscreen POS Terminal',
+      'Kitchen Display System (KDS)',
+      'Real-time Inventory Tracking',
+      'Table & Reservation Management',
+      'Multi-Branch Dashboard',
+      'Staff Role & Shift Management',
+      'Receipt Printing & E-Receipts',
+      'Offline-First Sync Engine',
+    ],
+    testimonial: {
+      text: 'This POS system transformed our restaurant operations. Checkout is lightning fast, kitchen staff get orders instantly, and I can track live sales from my phone.',
+      author: 'David Kimani',
+      role: 'Operations Director',
+      company: 'Savanna Grill Group',
+    },
+    featured: true,
+    layout: 'default',
+    relatedProjects: ['delivery-app', 'ecommerce-platform'],
+  },
 ];

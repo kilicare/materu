@@ -27,7 +27,7 @@ export const products: Product[] = [
     description: 'Patient management, appointments, medical records',
     imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80',
     imageAlt: 'Hospital Management Dashboard',
-    href: '/work/hospital-platform',
+    href: '/work/hospital-management',
   },
   {
     id: 'saas-dashboard',
@@ -36,7 +36,7 @@ export const products: Product[] = [
     description: 'Real-time business intelligence & reporting',
     imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
     imageAlt: 'SaaS Analytics Dashboard',
-    href: '/work/analytics-dashboard',
+    href: '/work/saas-analytics',
   },
   {
     id: 'ecommerce-platform',
@@ -55,7 +55,7 @@ export const products: Product[] = [
     description: 'Real-time tracking and order management',
     imageUrl: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80',
     imageAlt: 'Delivery Mobile App',
-    href: '/work/mobile-app',
+    href: '/work/delivery-app',
   },
   {
     id: 'ai-assistant',
