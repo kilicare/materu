@@ -102,11 +102,6 @@ export const ProjectBuilderProvider: React.FC<{
     loadFromLocalStorage,
   };
 
-  // Prevent hydration mismatch
-  if (!isMounted) {
-    return <>{children}</>;
-  }
-
   return (
     <ProjectBuilderContext.Provider value={value}>
       {children}

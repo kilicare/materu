@@ -359,4 +359,84 @@ export const caseStudies: CaseStudy[] = [
     layout: 'default',
     relatedProjects: ['hospital-management', 'ecommerce-platform'],
   },
+  {
+    id: 'ai-assistant',
+    title: 'Enterprise AI Assistant & Automation Engine',
+    slug: 'ai-assistant',
+    category: 'application',
+    shortDescription: 'Intelligent conversational AI agent with real-time vector search RAG and automated workflow execution',
+    fullDescription:
+      'A state-of-the-art enterprise AI assistant engineered to streamline business operations, automate customer support, process complex document insights, and trigger automated backend workflows. Features custom RAG vector memory, multi-model LLM orchestration, and real-time streaming interfaces.',
+    imageUrl: '/images/applications_background.jpg',
+    imageAlt: 'Enterprise AI Assistant Interface',
+    heroImage: '/images/applications_background.jpg',
+    challenges: [
+      {
+        title: 'High Support & Operational Workload',
+        description: 'Internal teams and support staff were overwhelmed with repetitive queries, manual data extraction, and tedious routine tasks.',
+      },
+      {
+        title: 'Siloed Knowledge Base',
+        description: 'Company documentation was scattered across PDFs, Notion, and databases with no unified, instant search mechanism.',
+      },
+      {
+        title: 'Inability to Execute Actions',
+        description: 'Legacy chatbots could only answer static FAQs without performing real-time business actions or API calls.',
+      },
+    ],
+    solutions: [
+      {
+        title: 'Custom RAG Vector Memory',
+        description: 'Instant contextual retrieval from private company documents using high-density vector embeddings.',
+        icon: '🧠',
+      },
+      {
+        title: 'Autonomous Tool Execution',
+        description: 'AI agent capable of triggering CRM updates, sending emails, and executing database queries in real time.',
+        icon: '⚡',
+      },
+      {
+        title: 'Real-time Streaming Interface',
+        description: 'Ultra-fast streaming UI powered by Anthropic & OpenAI models with automatic multi-model failover.',
+        icon: '💬',
+      },
+    ],
+    outcomes: [
+      {
+        metric: 'Support Resolution Speed',
+        value: '85% Faster',
+        description: 'Average resolution time dropped from 4 hours to under 2 minutes.',
+      },
+      {
+        metric: 'Automated Query Handling',
+        value: '72% Deflection',
+        description: '72% of incoming queries resolved autonomously without human intervention.',
+      },
+      {
+        metric: 'Team Productivity Boost',
+        value: '3x Efficiency',
+        description: 'Internal operations teams save over 120 hours per week on routine data retrieval.',
+      },
+    ],
+    technologies: ['Next.js 16', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Anthropic Claude API', 'Vector DB', 'Node.js'],
+    features: [
+      'Conversational AI Interface',
+      'Real-time Streaming Responses',
+      'Document & PDF Processing (RAG)',
+      'Autonomous Tool & API Execution',
+      'Contextual Conversation History',
+      'Enterprise Role-Based Access',
+      'Analytics & Usage Monitoring',
+      'Custom Webhook & Event Triggers',
+    ],
+    testimonial: {
+      text: 'MATERU built an AI assistant that actually understands our business workflows. It handles complex queries accurately and saves our support team hundreds of hours every month.',
+      author: 'Gervas Materu',
+      role: 'Founder & Product Lead',
+      company: 'MATERU',
+    },
+    featured: true,
+    layout: 'featured',
+    relatedProjects: ['saas-analytics', 'hospital-management'],
+  },
 ];
