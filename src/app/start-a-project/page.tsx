@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Heading, Body } from '@/components/Typography';
 import { Section } from '@/components/Container';
@@ -49,12 +50,26 @@ export default function StartProjectPage() {
   return (
     <ProjectBuilderProvider>
       {/* Hero */}
-      <Section bgColor="primary" padding="xl">
+      <Section bgColor="transparent" hasBackgroundImage padding="xl" className="relative">
+        {/* Background Image */}
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/images/startproject_background.jpg"
+            alt="Start Project Background"
+            fill
+            priority
+            quality={90}
+            className="object-cover"
+          />
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/50 to-ink/50" />
+        </div>
+
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="text-center mb-16"
+          className="text-center mb-16 relative z-10"
         >
           <motion.div variants={itemVariants}>
             <Heading level="h1" className="mb-6">
