@@ -132,45 +132,48 @@ export default function ProcessPage() {
 
             {/* Timeline items */}
             <div className="space-y-12">
-              {processSteps.map((step, index) => (
-                <motion.div
-                  key={step.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className={`md:grid md:grid-cols-2 md:gap-12 items-center ${
-                    index % 2 === 1 ? 'md:direction-rtl' : ''
-                  }`}
-                >
-                  {/* Content */}
-                  <div
-                    className={`${
-                      index % 2 === 1 ? 'md:order-2' : 'md:order-1'
-                    } mb-6 md:mb-0`}
+              {processSteps.map((step, index) => {
+                const isOdd = index % 2 === 1;
+                return (
+                  <motion.div
+                    key={step.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="relative md:grid md:grid-cols-2 md:gap-16 items-center"
                   >
-                    <div className="rounded-2xl bg-surface p-6 border border-border shadow-sm">
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className="text-4xl">{step.icon}</span>
-                        <div>
-                          <p className="text-sm text-brand font-bold">
-                            {step.duration}
-                          </p>
-                          <h4 className="font-bold text-foreground">{step.title}</h4>
+                    {/* Content Card */}
+                    <div
+                      className={
+                        isOdd
+                          ? 'md:col-start-2 mb-6 md:mb-0'
+                          : 'md:col-start-1 mb-6 md:mb-0'
+                      }
+                    >
+                      <div className="rounded-2xl bg-surface p-6 border border-border shadow-sm">
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="text-4xl">{step.icon}</span>
+                          <div>
+                            <p className="text-sm text-brand font-bold">
+                              {step.duration}
+                            </p>
+                            <h4 className="font-bold text-foreground">{step.title}</h4>
+                          </div>
                         </div>
+                        <p className="text-sm text-text-secondary">{step.description}</p>
                       </div>
-                      <p className="text-sm text-text-secondary">{step.description}</p>
                     </div>
-                  </div>
 
-                  {/* Timeline dot (visible on desktop) */}
-                  <div className={`hidden md:flex md:order-${index % 2 === 1 ? 1 : 2} justify-center`}>
-                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand text-white font-bold text-lg border-4 border-surface relative z-10 shadow-md">
-                      {step.number}
+                    {/* Timeline dot (centered on desktop line) */}
+                    <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center justify-center">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-brand text-white font-bold text-sm border-4 border-background relative z-10 shadow-md">
+                        {step.number}
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </motion.div>
@@ -246,7 +249,7 @@ export default function ProcessPage() {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <Button variant="primary" size="lg">
+            <Button variant="primary" size="lg" href="/start-a-project">
               Start a Project →
             </Button>
           </motion.div>

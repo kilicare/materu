@@ -11,19 +11,6 @@ import { ProjectBuilderProvider } from '@/contexts/ProjectBuilderContext';
 export const dynamic = 'force-dynamic';
 
 export default function StartProjectPage() {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsMounted(true);
-    }, 0);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (!isMounted) {
-    return null;
-  }
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

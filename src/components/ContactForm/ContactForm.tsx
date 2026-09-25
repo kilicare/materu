@@ -221,14 +221,17 @@ export const ContactForm: React.FC = () => {
 
       {/* Name */}
       <motion.div variants={itemVariants}>
-        <label className="block mb-2 font-semibold text-foreground">
+        <label htmlFor="contact-name" className="block mb-2 font-semibold text-foreground">
           Full Name *
         </label>
         <input
+          id="contact-name"
           type="text"
           name="name"
           value={formData.name}
           onChange={handleChange}
+          aria-invalid={!!errors.name}
+          aria-describedby={errors.name ? 'contact-name-error' : undefined}
           className={`${inputBaseClass} ${
             errors.name
               ? 'border border-destructive focus:ring-destructive'
@@ -237,20 +240,23 @@ export const ContactForm: React.FC = () => {
           placeholder="Your name"
         />
         {errors.name && (
-          <p className="text-destructive-foreground text-sm mt-2 font-medium">{errors.name}</p>
+          <p id="contact-name-error" className="text-destructive-foreground text-sm mt-2 font-medium">{errors.name}</p>
         )}
       </motion.div>
 
       {/* Email */}
       <motion.div variants={itemVariants}>
-        <label className="block mb-2 font-semibold text-foreground">
+        <label htmlFor="contact-email" className="block mb-2 font-semibold text-foreground">
           Email Address *
         </label>
         <input
+          id="contact-email"
           type="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
+          aria-invalid={!!errors.email}
+          aria-describedby={errors.email ? 'contact-email-error' : undefined}
           className={`${inputBaseClass} ${
             errors.email
               ? 'border border-destructive focus:ring-destructive'
@@ -259,35 +265,39 @@ export const ContactForm: React.FC = () => {
           placeholder="your@email.com"
         />
         {errors.email && (
-          <p className="text-destructive-foreground text-sm mt-2 font-medium">{errors.email}</p>
+          <p id="contact-email-error" className="text-destructive-foreground text-sm mt-2 font-medium">{errors.email}</p>
         )}
       </motion.div>
 
       {/* Phone */}
       <motion.div variants={itemVariants}>
-        <label className="block mb-2 font-semibold text-foreground">
+        <label htmlFor="contact-phone" className="block mb-2 font-semibold text-foreground">
           Phone Number
         </label>
         <input
+          id="contact-phone"
           type="tel"
           name="phone"
           value={formData.phone}
           onChange={handleChange}
           className={`${inputBaseClass} border border-border focus:ring-brand focus:border-brand`}
-          placeholder="+1 (555) 000-0000"
+          placeholder="+255 650 745 642"
         />
       </motion.div>
 
       {/* Subject */}
       <motion.div variants={itemVariants}>
-        <label className="block mb-2 font-semibold text-foreground">
+        <label htmlFor="contact-subject" className="block mb-2 font-semibold text-foreground">
           Subject *
         </label>
         <input
+          id="contact-subject"
           type="text"
           name="subject"
           value={formData.subject}
           onChange={handleChange}
+          aria-invalid={!!errors.subject}
+          aria-describedby={errors.subject ? 'contact-subject-error' : undefined}
           className={`${inputBaseClass} ${
             errors.subject
               ? 'border border-destructive focus:ring-destructive'
@@ -296,20 +306,23 @@ export const ContactForm: React.FC = () => {
           placeholder="What&apos;s this about?"
         />
         {errors.subject && (
-          <p className="text-destructive-foreground text-sm mt-2 font-medium">{errors.subject}</p>
+          <p id="contact-subject-error" className="text-destructive-foreground text-sm mt-2 font-medium">{errors.subject}</p>
         )}
       </motion.div>
 
       {/* Message */}
       <motion.div variants={itemVariants}>
-        <label className="block mb-2 font-semibold text-foreground">
+        <label htmlFor="contact-message" className="block mb-2 font-semibold text-foreground">
           Message *
         </label>
         <textarea
+          id="contact-message"
           name="message"
           value={formData.message}
           onChange={handleChange}
           rows={6}
+          aria-invalid={!!errors.message}
+          aria-describedby={errors.message ? 'contact-message-error' : undefined}
           className={`${inputBaseClass} resize-none ${
             errors.message
               ? 'border border-destructive focus:ring-destructive'
@@ -318,7 +331,7 @@ export const ContactForm: React.FC = () => {
           placeholder="Tell us about your project..."
         />
         {errors.message && (
-          <p className="text-destructive-foreground text-sm mt-2 font-medium">{errors.message}</p>
+          <p id="contact-message-error" className="text-destructive-foreground text-sm mt-2 font-medium">{errors.message}</p>
         )}
       </motion.div>
 

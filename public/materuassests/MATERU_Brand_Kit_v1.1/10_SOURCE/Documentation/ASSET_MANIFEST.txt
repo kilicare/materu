@@ -1,0 +1,9 @@
+MATERU BRAND KIT v1.0 — ASSET MANIFEST
+Core colors: #0B0C0E / #F3F1EB / #FF5A36
+Primary font: Manrope
+Minimum digital symbol: 24 px
+Logo variants: horizontal / stacked / symbol / wordmark / monochrome
+Exports: SVG + PNG
+Web: favicon + OG image + metadata
+Social: Instagram post/story, LinkedIn, X, WhatsApp
+Guidelines: PDF + Markdown

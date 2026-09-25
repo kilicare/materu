@@ -57,3 +57,6 @@ export { PageTransition } from './PageTransition';
 
 // Project Builder
 export { ProjectBuilder } from './ProjectBuilder';
+
+// PWA Install Prompt
+export { PWAInstallPrompt } from './PWAInstallPrompt';

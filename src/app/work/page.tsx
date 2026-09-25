@@ -110,7 +110,7 @@ export default function WorkPage() {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <Button variant="primary" size="lg">
+            <Button variant="primary" size="lg" href="/start-a-project">
               Start a Project →
             </Button>
           </motion.div>

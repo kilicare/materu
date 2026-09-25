@@ -74,31 +74,36 @@ export const WhatWeBuild: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Solution Details Preview */}
+      {/* Solution Details Preview - Architectural Blueprint */}
       <motion.div
         key={selectedSolution.id}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.4 }}
-        className="mt-16 rounded-3xl border border-border bg-surface/90 backdrop-blur-sm p-8 md:mt-20 md:p-12 shadow-xl"
+        className="mt-16 rounded-3xl border border-light-greige bg-warm-sand p-6 sm:p-8 md:mt-20 md:p-12 shadow-2xl text-[#1A1917] overflow-hidden"
       >
-        <div className="flex items-start gap-6">
+        <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
           <div className="text-5xl">{selectedSolution.icon}</div>
 
           <div className="flex-1">
-            <h3 className="mb-3 text-3xl font-bold text-foreground">
-              {selectedSolution.title}
-            </h3>
+            <div className="flex items-center justify-between gap-4 mb-3">
+              <h3 className="text-3xl font-bold text-[#1A1917]">
+                {selectedSolution.title}
+              </h3>
+              <span className="hidden sm:inline-flex items-center px-3.5 py-1 rounded-full bg-light-greige text-xs font-mono font-bold uppercase tracking-wider text-[#4A453E]">
+                Architecture Overview
+              </span>
+            </div>
 
-            <p className="mb-8 text-lg text-text-secondary">
+            <p className="mb-8 text-lg text-[#57534E] leading-relaxed">
               {selectedSolution.description}
             </p>
 
             {/* Examples */}
             <div className="space-y-3">
-              <p className="text-sm font-semibold text-brand uppercase tracking-wide">
-                What we build:
+              <p className="text-xs font-mono font-bold text-brand uppercase tracking-wider">
+                Capabilities & Scope:
               </p>
               <div className="flex flex-wrap gap-3">
                 {selectedSolution.examples.map((example, index) => (
@@ -107,7 +112,7 @@ export const WhatWeBuild: React.FC = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.1 }}
-                    className="inline-block rounded-full bg-brand/10 border border-brand/20 px-4 py-2 text-sm font-medium text-brand"
+                    className="inline-block rounded-full bg-light-greige border border-[#D8D4CB] px-4 py-2 text-sm font-semibold text-[#2D2A26]"
                   >
                     {example}
                   </motion.span>
@@ -118,10 +123,10 @@ export const WhatWeBuild: React.FC = () => {
             {/* CTA */}
             <motion.a
               href={selectedSolution.href}
-              className="mt-8 inline-flex items-center gap-2 font-semibold text-brand hover:text-foreground transition-colors"
+              className="mt-8 inline-flex items-center gap-2 font-bold text-brand hover:text-[#1A1917] transition-colors"
               whileHover={{ x: 8 }}
             >
-              Explore {selectedSolution.title} →
+              Explore Full {selectedSolution.title} System →
             </motion.a>
           </div>
         </div>

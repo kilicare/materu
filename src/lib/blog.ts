@@ -23,7 +23,7 @@ export const blogPosts: BlogPost[] = [
       'A website and a web app might sound similar, but they serve different purposes. Learn the differences and find out which one your business actually needs.',
     category: 'product',
     author: 'Gervas Materu',
-    authorImage: '/team/gervas.webp',
+    authorImage: '/images/gervasmateru.png',
     publishedAt: '2024-03-15',
     readTime: 8,
     image: '/blog/website-vs-app.webp',

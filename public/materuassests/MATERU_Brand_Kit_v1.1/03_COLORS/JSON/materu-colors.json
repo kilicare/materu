@@ -1,0 +1,47 @@
+{
+  "Materu Ink": {
+    "hex": "#0B0C0E",
+    "rgb": [
+      11,
+      12,
+      14
+    ],
+    "role": "Primary / dark surfaces"
+  },
+  "Warm Ivory": {
+    "hex": "#F3F1EB",
+    "rgb": [
+      243,
+      241,
+      235
+    ],
+    "role": "Secondary / light surfaces"
+  },
+  "Signal Orange": {
+    "hex": "#FF5A36",
+    "rgb": [
+      255,
+      90,
+      54
+    ],
+    "role": "Accent / action"
+  },
+  "Pure White": {
+    "hex": "#FFFFFF",
+    "rgb": [
+      255,
+      255,
+      255
+    ],
+    "role": "Utility"
+  },
+  "Soft Gray": {
+    "hex": "#9FA4AC",
+    "rgb": [
+      159,
+      164,
+      172
+    ],
+    "role": "Muted text / borders"
+  }
+}

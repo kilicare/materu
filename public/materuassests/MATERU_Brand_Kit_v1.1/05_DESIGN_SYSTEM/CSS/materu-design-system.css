@@ -1,0 +1,9 @@
+:root{
+ --m-ink:#0B0C0E; --m-ivory:#F3F1EB; --m-orange:#FF5A36;
+ --m-radius-sm:8px; --m-radius-md:14px; --m-radius-lg:20px;
+ --m-shadow-card:0 14px 40px rgba(11,12,14,.12);
+ --m-ease:cubic-bezier(.22,1,.36,1);
+}
+.materu-btn-primary{background:var(--m-orange);color:var(--m-ivory);border-radius:999px;padding:.75rem 1.25rem;font-weight:700;}
+.materu-btn-dark{background:var(--m-ink);color:var(--m-ivory);border-radius:999px;padding:.75rem 1.25rem;font-weight:700;}
+.materu-card{background:#fff;border:1px solid rgba(11,12,14,.08);border-radius:var(--m-radius-md);box-shadow:var(--m-shadow-card);}

@@ -55,10 +55,10 @@ export const Footer: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="mb-16 grid gap-12 md:grid-cols-2 lg:grid-cols-5"
+          className="mb-16 grid gap-12 md:grid-cols-3 lg:grid-cols-5"
         >
           {/* Brand Column */}
-          <motion.div variants={itemVariants} className="space-y-4 lg:col-span-2">
+          <motion.div variants={itemVariants} className="space-y-4 md:col-span-3 lg:col-span-2">
             <Image
               src="/brand/logo-horizontal.svg"
               alt="MATERU"
@@ -84,6 +84,7 @@ export const Footer: React.FC = () => {
                   whileHover={{ scale: 1.15, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                   className="text-xl text-text-secondary hover:text-brand transition-colors duration-base"
+                  aria-label={`Follow MATERU on ${social.label}`}
                   title={social.label}
                 >
                   {social.icon === 'instagram' && (

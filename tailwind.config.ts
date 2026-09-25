@@ -177,6 +177,12 @@ const config: Config = {
           6: 'var(--chart-6)',
         },
 
+        /* Luxury Editorial & Architecture Tones */
+        'warm-sand': '#F4F0E8',
+        'soft-stone': '#F1F1EE',
+        'warm-ivory': '#F7F4EC',
+        'light-greige': '#EAE7E0',
+
         /* Backward Compatibility Aliases */
         ink: 'var(--background)',
         ivory: 'var(--foreground)',

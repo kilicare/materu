@@ -55,23 +55,13 @@ export const FinalCTA: React.FC = () => {
           variants={itemVariants}
           className="flex flex-col gap-4 sm:flex-row sm:justify-center"
         >
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Button variant="primary" size="lg">
-              Start a Project →
-            </Button>
-          </motion.div>
+          <Button variant="primary" size="lg" href="/start-a-project">
+            Start a Project →
+          </Button>
 
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Button variant="secondary" size="lg">
-              Schedule a Call
-            </Button>
-          </motion.div>
+          <Button variant="secondary" size="lg" href="/contact">
+            Schedule a Call
+          </Button>
         </motion.div>
 
         {/* Additional CTA */}

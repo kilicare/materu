@@ -177,35 +177,39 @@ export const SolutionDetailPage: React.FC<SolutionDetailPageProps> = ({
               <motion.div
                 key={useCase.id}
                 variants={itemVariants}
-                className="rounded-2xl border border-border bg-surface p-8 md:p-12 shadow-sm"
+                className="rounded-3xl border border-light-greige bg-warm-ivory p-8 md:p-12 shadow-xl text-[#1A1917]"
               >
                 <div className="grid gap-8 md:grid-cols-2">
                   {/* Left Side */}
                   <div>
                     <div className="mb-4 text-5xl">{useCase.icon}</div>
-                    <h3 className="mb-2 text-2xl font-bold text-foreground">
+                    <h3 className="mb-2 text-2xl font-bold text-[#1A1917]">
                       {useCase.title}
                     </h3>
-                    <Badge variant="brand" size="sm">
+                    <span className="inline-block px-3 py-1 rounded-full bg-light-greige text-xs font-mono font-bold uppercase tracking-wider text-[#4A453E] mb-4">
                       {useCase.industry}
-                    </Badge>
+                    </span>
 
-                    <div className="mt-6 space-y-4">
+                    <div className="mt-4 space-y-4">
                       <div>
-                        <Label className="uppercase text-brand font-semibold">Problem</Label>
-                        <p className="mt-2 text-text-secondary">{useCase.problem}</p>
+                        <span className="text-xs font-mono font-bold text-brand uppercase tracking-wider">
+                          Business Challenge
+                        </span>
+                        <p className="mt-2 text-[#57534E] leading-relaxed">{useCase.problem}</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Right Side */}
                   <div className="flex items-center">
-                    <div className="space-y-4 w-full">
+                    <div className="space-y-4 w-full p-6 rounded-2xl bg-white/60 border border-light-greige">
                       <div className="flex items-start gap-4">
-                        <span className="text-2xl text-brand">✓</span>
+                        <span className="text-2xl text-brand font-bold">✓</span>
                         <div>
-                          <Label className="uppercase text-brand font-semibold">Solution</Label>
-                          <p className="mt-2 text-foreground">{useCase.solution}</p>
+                          <span className="text-xs font-mono font-bold text-brand uppercase tracking-wider">
+                            Architectural Solution
+                          </span>
+                          <p className="mt-2 text-[#1A1917] font-medium leading-relaxed">{useCase.solution}</p>
                         </div>
                       </div>
                     </div>

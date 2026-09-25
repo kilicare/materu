@@ -10,6 +10,14 @@ export const brand = {
   ctaForeground: '#FFFFFF',
 };
 
+// LUXURY EDITORIAL & WORKSPACE PALETTE
+export const warmTones = {
+  warmSand: '#F4F0E8', // premium, natural, editorial
+  softStone: '#F1F1EE', // modern, clean, SaaS + agency
+  warmIvory: '#F7F4EC', // elegant, luxury, very readable
+  lightGreige: '#EAE7E0', // sophisticated, architectural
+};
+
 // SEMANTIC COLORS
 export const semantic = {
   success: {
@@ -98,6 +106,7 @@ export const colors = {
   // Semantic
   semantic,
   charts,
+  warmTones,
 
   // Backward compatibility
   ink: '#0B0C0E',

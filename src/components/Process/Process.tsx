@@ -12,8 +12,9 @@ export const Process: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Find the process section
+    let ticking = false;
+
+    const updateScroll = () => {
       const processSection = document.getElementById('process-section');
       if (!processSection) return;
 
@@ -21,19 +22,26 @@ export const Process: React.FC = () => {
       const sectionHeight = processSection.offsetHeight;
       const windowHeight = window.innerHeight;
 
-      // Calculate progress as user scrolls through section
-      let progress =
-        (windowHeight - rect.top) / (sectionHeight + windowHeight);
+      let progress = (windowHeight - rect.top) / (sectionHeight + windowHeight);
       progress = Math.max(0, Math.min(1, progress));
 
       setScrollProgress(progress);
 
-      // Calculate which step should be active
       const stepIndex = Math.floor(progress * processSteps.length);
       setActiveStep(Math.min(stepIndex, processSteps.length - 1));
+      ticking = false;
     };
 
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScroll);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    updateScroll();
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -90,8 +98,8 @@ export const Process: React.FC = () => {
         />
       </motion.div>
 
-      {/* Steps Grid - Desktop */}
-      <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-4">
+      {/* Steps Grid - Desktop & Tablet */}
+      <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 xl:gap-4">
         {processSteps.map((step, index) => (
           <ProcessStepComponent
             key={step.id}

@@ -55,9 +55,9 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 md:pt-0">
+    <section className="relative min-h-[90vh] md:min-h-screen flex flex-col items-center justify-center pt-16 md:pt-0 overflow-hidden w-full max-w-full">
       {/* Background Image */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         <Image
           src="/images/hero_background.jpg"
           alt="Hero Background"
@@ -71,33 +71,33 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center">
-        {/* Hero Typography */}
-        <motion.div
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-[90vh] md:min-h-screen px-4 py-16 text-center w-full max-w-full">
+        {/* Hero Typography - Single Semantic H1 */}
+        <motion.h1
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="space-y-6"
+          className="flex flex-col items-center space-y-2 sm:space-y-4 md:space-y-6 text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-foreground leading-none tracking-tight"
         >
           {heroWords.map((word, index) => (
-            <motion.h1
+            <motion.span
               key={index}
               variants={wordVariants}
-              className="text-5xl font-extrabold text-foreground leading-tight md:text-7xl lg:text-8xl"
+              className="block"
             >
               {word}
-            </motion.h1>
+            </motion.span>
           ))}
-        </motion.div>
+        </motion.h1>
 
         {/* Subtitle */}
         <motion.div
           variants={subtitleVariants}
           initial="hidden"
           animate="visible"
-          className="mt-12 max-w-2xl"
+          className="mt-8 md:mt-12 max-w-2xl"
         >
-          <p className="text-lg text-text-secondary font-regular md:text-xl">
+          <p className="text-base sm:text-lg md:text-xl text-text-secondary font-medium leading-relaxed">
             We design and build digital products, platforms and systems for
             ambitious businesses.
           </p>
@@ -108,7 +108,7 @@ export const Hero: React.FC = () => {
           variants={ctaContainerVariants}
           initial="hidden"
           animate="visible"
-          className="mt-12 flex flex-col gap-4 sm:flex-row sm:justify-center"
+          className="mt-8 md:mt-12 flex flex-col gap-4 sm:flex-row sm:justify-center w-full sm:w-auto px-4 sm:px-0"
         >
           <Button variant="primary" size="lg" href="/start-a-project">
             Start a Project →

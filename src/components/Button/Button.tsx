@@ -36,45 +36,41 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const buttonRef = useRef<HTMLButtonElement>(null);
     const [magneticOffset, setMagneticOffset] = useState({ x: 0, y: 0 });
-    const [isDesktop, setIsDesktop] = useState(false);
+    const [hasFinePointer, setHasFinePointer] = useState(false);
     const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
-    // Check for reduced motion preference
+    // Check for fine pointer and reduced motion preference
     useEffect(() => {
-      const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-      const timer = setTimeout(() => {
-        setPrefersReducedMotion(mediaQuery.matches);
-      }, 0);
+      const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const pointerQuery = window.matchMedia('(pointer: fine) and (hover: hover)');
 
-      const handleChange = (e: MediaQueryListEvent) => {
+      const updateCapabilities = () => {
+        setPrefersReducedMotion(motionQuery.matches);
+        setHasFinePointer(pointerQuery.matches);
+      };
+
+      updateCapabilities();
+
+      const handleMotionChange = (e: MediaQueryListEvent) => {
         setPrefersReducedMotion(e.matches);
       };
 
-      mediaQuery.addEventListener('change', handleChange);
-      return () => {
-        clearTimeout(timer);
-        mediaQuery.removeEventListener('change', handleChange);
+      const handlePointerChange = (e: MediaQueryListEvent) => {
+        setHasFinePointer(e.matches);
       };
-    }, []);
 
-    // Check if desktop
-    useEffect(() => {
-      const timer = setTimeout(() => {
-        setIsDesktop(window.innerWidth >= 768);
-      }, 0);
-      const handleResize = () => {
-        setIsDesktop(window.innerWidth >= 768);
-      };
-      window.addEventListener('resize', handleResize);
+      motionQuery.addEventListener('change', handleMotionChange);
+      pointerQuery.addEventListener('change', handlePointerChange);
+
       return () => {
-        clearTimeout(timer);
-        window.removeEventListener('resize', handleResize);
+        motionQuery.removeEventListener('change', handleMotionChange);
+        pointerQuery.removeEventListener('change', handlePointerChange);
       };
     }, []);
 
     // Magnetic effect handler
     const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-      if (!magnetic || !isDesktop || prefersReducedMotion || !buttonRef.current) {
+      if (!magnetic || !hasFinePointer || prefersReducedMotion || !buttonRef.current) {
         return;
       }
 

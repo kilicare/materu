@@ -1,0 +1,21 @@
+MATERU TYPOGRAPHY
+
+Primary typeface
+Manrope — a modern grotesk suitable for product interfaces, headlines, navigation and brand communications.
+
+Weights
+400 Regular — body copy
+500 Medium — labels, metadata, navigation
+600 SemiBold — buttons, subheads
+700 Bold — headlines, wordmark-style display copy
+800 ExtraBold — hero emphasis, used sparingly
+
+Fallback
+Inter, Segoe UI, Arial, sans-serif
+
+Display
+Large headlines: 56–96 px desktop / 36–56 px mobile
+Section headings: 32–48 px
+Body: 16–18 px
+Small/meta: 12–14 px
+Tracking: tight on large headlines, +0.08–0.18em for uppercase labels.

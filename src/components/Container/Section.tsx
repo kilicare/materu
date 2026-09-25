@@ -42,7 +42,7 @@ export const Section: React.FC<SectionProps> = ({
       className={clsx(
         activeBg,
         paddingStyles[padding],
-        'relative',
+        'relative w-full overflow-hidden',
         isTransparent && 'isolate',
         className
       )}

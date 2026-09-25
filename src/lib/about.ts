@@ -17,12 +17,12 @@ export const aboutContent = {
   story: {
     title: 'Our Story',
     intro:
-      'MATERU was born from frustration. Our founder, Gervas Materu, was tired of seeing businesses struggle with outdated technology and poor digital experiences.',
+      'MATERU was founded with a clear, uncompromising vision: to engineer high-grade, resilient software systems and digital platforms for forward-looking African enterprises and global innovators.',
     paragraphs: [
-      'After years working as a developer and consultant, Gervas realized that most companies didn\'t need generic solutions—they needed custom software built specifically for their challenges.',
-      'In 2018, MATERU was founded with a simple mission: build digital products that move people forward. Not flashy. Not over-engineered. Just solid, thoughtful technology that solves real problems.',
-      'Today, MATERU has grown from a solo founder to a team of talented designers, developers, and strategists. We\'ve built everything from hospital management systems to e-commerce platforms to AI-powered tools.',
-      'But our core belief remains unchanged: technology should serve humanity. Every product we build is designed with that principle in mind.',
+      'Founded by Gervas Materu—a software engineer and University of Dodoma (UDOM, Class of 2027) graduate—the studio originated from an obsession with architectural precision, clean code, and purpose-built digital tools.',
+      'Rather than delivering bloated templates or generic low-quality solutions, MATERU was built to engineer custom digital infrastructure tailored specifically to high-stakes operational workflows and commercial growth.',
+      'Today, MATERU stands as a modern software engineering studio, crafting mission-critical hospital management systems, scalable enterprise ERPs, intelligent SaaS platforms, and high-converting web applications.',
+      'Our core principle remains relentless: technology should solve real problems, scale reliably, and deliver tangible commercial and human impact.',
     ],
   },
   philosophy: {
@@ -58,11 +58,11 @@ export const aboutContent = {
   },
   founder: {
     name: 'Gervas Materu',
-    role: 'Founder & Chief Strategist',
-    bio: 'Gervas is a full-stack developer turned entrepreneur who has spent the last 8+ years building digital products. He believes that great technology should be simple, beautiful, and purposeful.',
-    image: '/about/founder.webp',
+    role: 'Founder & Principal Software Engineer',
+    bio: 'Gervas is a software engineer and system architect specializing in modern distributed web architectures, high-performance applications, and thoughtful digital product engineering.',
+    image: '/images/gervasmateru.png',
     background:
-      'Before starting MATERU, Gervas worked with startups and enterprises across Africa, Europe, and the US, developing expertise in everything from complex business systems to modern web applications. He holds a degree in Computer Science and has spoken at several tech conferences about building scalable digital products.',
+      'A software engineering graduate from the University of Dodoma (UDOM, 2027), Gervas founded MATERU with a vision to build world-class digital systems in Tanzania and across Africa. With a deep foundation in computer science, modern full-stack frameworks, and database architecture, he leads MATERU\'s engineering direction and architectural standards.',
   },
   team: [
     {

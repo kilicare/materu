@@ -75,36 +75,46 @@ export const Step6Confirmation: React.FC<Step6ConfirmationProps> = ({
         </Body>
       </div>
 
-      {/* Project Details */}
+      {/* Project Details - Architectural Spec Sheet */}
       <motion.div
         variants={itemVariants}
-        className="rounded-2xl border border-border bg-surface p-8"
+        className="rounded-3xl border border-light-greige bg-warm-ivory p-8 md:p-10 shadow-xl text-[#1A1917]"
       >
-        <h4 className="text-sm font-bold uppercase tracking-wider text-brand mb-6">
-          Project Details
-        </h4>
+        <div className="flex items-center justify-between mb-6 pb-4 border-b border-light-greige">
+          <div>
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-brand">
+              Project Specification
+            </span>
+            <h4 className="text-xl font-bold text-[#1A1917] mt-1">
+              Estimated Scope & Parameters
+            </h4>
+          </div>
+          <span className="px-3 py-1 rounded-full bg-light-greige text-xs font-mono font-bold text-[#4A453E]">
+            Verified
+          </span>
+        </div>
 
         <div className="space-y-4">
-          <div className="flex justify-between items-start pb-4 border-b border-border">
-            <span className="text-text-secondary">Project Type</span>
-            <span className="font-semibold text-foreground text-right">
+          <div className="flex justify-between items-start pb-4 border-b border-light-greige">
+            <span className="text-sm font-medium text-[#6B655C]">Project Type</span>
+            <span className="font-bold text-[#1A1917] text-right">
               {categoryLabel} → {subcategoryLabel}
             </span>
           </div>
 
-          <div className="flex justify-between items-start pb-4 border-b border-border">
-            <span className="text-text-secondary">Budget</span>
-            <span className="font-semibold text-foreground">{budgetLabel}</span>
+          <div className="flex justify-between items-start pb-4 border-b border-light-greige">
+            <span className="text-sm font-medium text-[#6B655C]">Budget Allocation</span>
+            <span className="font-bold text-brand">{budgetLabel}</span>
           </div>
 
-          <div className="flex justify-between items-start pb-4 border-b border-border">
-            <span className="text-text-secondary">Timeline</span>
-            <span className="font-semibold text-foreground">{timelineLabel}</span>
+          <div className="flex justify-between items-start pb-4 border-b border-light-greige">
+            <span className="text-sm font-medium text-[#6B655C]">Target Timeline</span>
+            <span className="font-bold text-[#1A1917]">{timelineLabel}</span>
           </div>
 
           <div className="flex justify-between items-start">
-            <span className="text-text-secondary">Description</span>
-            <span className="font-semibold text-foreground text-right max-w-xs">
+            <span className="text-sm font-medium text-[#6B655C]">Project Goals</span>
+            <span className="font-medium text-[#1A1917] text-right max-w-xs">
               {formData.projectDescription.substring(0, 100)}
               {formData.projectDescription.length > 100 ? '...' : ''}
             </span>

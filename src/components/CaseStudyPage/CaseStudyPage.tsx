@@ -109,7 +109,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
         </motion.div>
 
         {/* Hero Image */}
-        <div className="relative h-96 w-full overflow-hidden rounded-3xl border border-border shadow-2xl">
+        <div className="relative h-60 sm:h-72 md:h-96 lg:h-[450px] w-full overflow-hidden rounded-3xl border border-border shadow-2xl">
           <Image
             src={caseStudy.heroImage}
             alt={caseStudy.imageAlt}
@@ -283,7 +283,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
         </div>
       </Section>
 
-      {/* Testimonial */}
+      {/* Testimonial - Luxury Editorial Card */}
       {caseStudy.testimonial && (
         <Section bgColor="primary" padding="xl">
           <motion.div
@@ -291,24 +291,29 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="max-w-3xl mx-auto text-center"
+            className="max-w-4xl mx-auto"
           >
-            <motion.div variants={itemVariants} className="mb-8 text-5xl">
-              &ldquo;
-            </motion.div>
+            <div className="relative overflow-hidden rounded-3xl bg-warm-sand border border-light-greige p-8 md:p-14 shadow-2xl text-center">
+              {/* Subtle architectural tag */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-light-greige/80 text-xs font-mono font-bold uppercase tracking-wider text-[#4A453E] mb-6">
+                Client Perspective
+              </div>
 
-            <motion.div variants={itemVariants} className="mb-8">
-              <p className="text-xl text-foreground leading-relaxed">
+              <div className="mb-6 text-6xl text-brand leading-none select-none font-serif">
+                &ldquo;
+              </div>
+
+              <p className="mb-8 text-xl md:text-2xl font-medium text-[#1A1917] leading-relaxed max-w-2xl mx-auto">
                 {caseStudy.testimonial.text}
               </p>
-            </motion.div>
 
-            <motion.div variants={itemVariants}>
-              <p className="font-bold text-brand">{caseStudy.testimonial.author}</p>
-              <Metadata>
-                {caseStudy.testimonial.role} at {caseStudy.testimonial.company}
-              </Metadata>
-            </motion.div>
+              <div className="pt-6 border-t border-light-greige max-w-xs mx-auto">
+                <p className="font-bold text-[#1A1917] text-base">{caseStudy.testimonial.author}</p>
+                <p className="text-xs font-semibold text-[#6B655C] uppercase tracking-wider mt-1">
+                  {caseStudy.testimonial.role} at {caseStudy.testimonial.company}
+                </p>
+              </div>
+            </div>
           </motion.div>
         </Section>
       )}
@@ -391,10 +396,10 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
           </motion.div>
 
           <motion.div variants={itemVariants} className="flex gap-4 justify-center flex-wrap">
-            <Button variant="primary" size="lg">
+            <Button variant="primary" size="lg" href="/start-a-project">
               Start a Project →
             </Button>
-            <Button variant="secondary" size="lg">
+            <Button variant="secondary" size="lg" href="/contact">
               Schedule a Demo
             </Button>
           </motion.div>

@@ -208,43 +208,45 @@ export default function InsightsPage() {
         )}
       </Section>
 
-      {/* Newsletter CTA */}
+      {/* Newsletter CTA - Luxury Editorial Card */}
       <Section bgColor="primary" padding="xl">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.4 }}
-          className="text-center max-w-2xl mx-auto"
+          className="max-w-3xl mx-auto"
         >
-          <motion.div variants={itemVariants} className="mb-8">
-            <Heading level="h2" className="mb-6">
+          <div className="rounded-3xl border border-light-greige bg-warm-sand p-8 md:p-14 shadow-2xl text-center text-[#1A1917]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-light-greige text-xs font-mono font-bold uppercase tracking-wider text-[#4A453E] mb-4">
+              Weekly Publication
+            </div>
+
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1917] mb-4">
               Get Articles Like These in Your Inbox
-            </Heading>
-          </motion.div>
+            </h2>
 
-          <motion.div variants={itemVariants} className="mb-8">
-            <Body color="secondary">
-              Subscribe to our newsletter for insights on building better digital
-              products.
-            </Body>
-          </motion.div>
+            <p className="text-base md:text-lg text-[#57534E] mb-8 max-w-xl mx-auto leading-relaxed">
+              Subscribe to the MATERU journal for insights on building scalable digital products, technology architecture, and engineering strategy.
+            </p>
 
-          <motion.form
-            variants={itemVariants}
-            onSubmit={e => {
-              e.preventDefault();
-              alert('Thanks for subscribing!');
-            }}
-            className="flex gap-4"
-          >
-            <input
-              type="email"
-              placeholder="your@email.com"
-              className="flex-1 rounded-full bg-surface border border-border px-6 py-3 text-foreground placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-brand shadow-inner"
-            />
-            <Button variant="primary">Subscribe</Button>
-          </motion.form>
+            <motion.form
+              variants={itemVariants}
+              onSubmit={e => {
+                e.preventDefault();
+                alert('Thanks for subscribing!');
+              }}
+              className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
+            >
+              <input
+                type="email"
+                placeholder="Enter your work email"
+                required
+                className="flex-1 rounded-full bg-white border border-light-greige px-6 py-3.5 text-[#1A1917] placeholder-[#8C8479] focus:outline-none focus:ring-2 focus:ring-brand shadow-sm font-medium"
+              />
+              <Button variant="primary">Subscribe →</Button>
+            </motion.form>
+          </div>
         </motion.div>
       </Section>
     </>

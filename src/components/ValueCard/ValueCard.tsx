@@ -14,11 +14,11 @@ export const ValueCard: React.FC<ValueCardProps> = ({ value, index }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ delay: index * 0.1, duration: 0.6 }}
-      className={`grid gap-8 md:gap-12 items-center md:grid-cols-2`}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ delay: index * 0.1, duration: 0.5 }}
+      className="grid gap-8 md:gap-12 items-center md:grid-cols-2 overflow-hidden w-full"
     >
       {/* Text Content */}
       <motion.div

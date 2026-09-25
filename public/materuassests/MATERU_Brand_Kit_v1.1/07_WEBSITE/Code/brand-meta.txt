@@ -1,0 +1,7 @@
+Recommended web metadata:
+title: MATERU — Digital Products
+theme-color: #0B0C0E
+background-color: #0B0C0E
+accent-color: #FF5A36
+og:image: /MATERU_OG_1200x630.png
+favicon: /materu-favicon.ico
