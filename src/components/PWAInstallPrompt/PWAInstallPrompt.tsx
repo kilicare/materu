@@ -124,7 +124,7 @@ export function PWAInstallPrompt() {
 
   return (
     <aside
-      aria-label="Install MATERU App"
+      aria-label="Install materu App"
       className="fixed bottom-4 right-4 z-50 max-w-sm w-[calc(100vw-2rem)] sm:w-[380px] bg-[#121316]/95 border border-zinc-700/80 rounded-2xl p-4 shadow-2xl backdrop-blur-xl text-white transition-all duration-300"
     >
       <div className="flex items-start gap-3.5">
@@ -132,7 +132,7 @@ export function PWAInstallPrompt() {
         <div className="w-12 h-12 rounded-xl bg-zinc-900/90 border border-zinc-700/70 p-2 flex items-center justify-center shrink-0 shadow-inner">
           <Image
             src="/brand/logo-symbol.svg"
-            alt="MATERU Symbol"
+            alt="materu Symbol"
             width={32}
             height={32}
             className="w-full h-full object-contain"
@@ -143,7 +143,7 @@ export function PWAInstallPrompt() {
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between gap-1">
             <h3 className="text-sm font-semibold text-white tracking-tight">
-              Install MATERU App
+              Install materu App
             </h3>
             <button
               onClick={handleDismiss}
@@ -201,7 +201,7 @@ export function PWAInstallPrompt() {
                 <li>
                   Look for the <span className="font-semibold text-white">Install icon (⬇️ / 💻)</span> in your browser's address bar (top right).
                 </li>
-                <li>Or open browser menu (&#8942;) ➔ choose <span className="font-semibold text-white">"Install MATERU..."</span>.</li>
+                <li>Or open browser menu (&#8942;) ➔ choose <span className="font-semibold text-white">"Install materu..."</span>.</li>
               </ol>
             </>
           )}

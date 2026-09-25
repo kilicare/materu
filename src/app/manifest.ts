@@ -2,9 +2,9 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'MATERU — Digital Products',
-    short_name: 'MATERU',
-    description: 'Digital Products For A Bigger Tomorrow. Building custom websites, web apps, and software solutions.',
+    name: 'materu',
+    short_name: 'materu',
+    description: 'materu — Digital Products For A Bigger Tomorrow. Building custom websites, web apps, and software solutions.',
     start_url: '/',
     display: 'standalone',
     background_color: '#0B0C0E',

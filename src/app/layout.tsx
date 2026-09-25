@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
-    title: 'MATERU',
+    title: 'materu',
   },
   formatDetection: {
     telephone: false,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://materu.com',
-    siteName: 'MATERU',
+    siteName: 'materu',
     title: 'MATERU — Digital Products For A Bigger Tomorrow',
     description: 'Building custom solutions that move people forward.',
     images: [
@@ -35,13 +35,13 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'MATERU — Digital Products',
+        alt: 'materu — Digital Products',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MATERU — Digital Products',
+    title: 'materu — Digital Products',
     description: 'Building custom solutions that move people forward.',
     images: ['/og-image.png'],
   },
@@ -78,8 +78,8 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="MATERU" />
-        <meta name="application-name" content="MATERU" />
+        <meta name="apple-mobile-web-app-title" content="materu" />
+        <meta name="application-name" content="materu" />
       </head>
 
       <body className="bg-background text-foreground antialiased selection:bg-brand selection:text-white">
