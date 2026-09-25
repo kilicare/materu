@@ -14,7 +14,7 @@ export default function Error({
   console.error('Error occurred:', error);
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-bg-primary text-text-primary px-4">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-background text-foreground px-4">
       <Heading level="h1" className="text-6xl mb-6">
         Something went wrong
       </Heading>

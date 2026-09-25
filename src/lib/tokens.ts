@@ -1,31 +1,110 @@
-// COLORS
+// MATERU DESIGN SYSTEM TOKENS
+
+// BRAND COLORS
+export const brand = {
+  orange: '#F97316', // Signature Brand Accent
+  orangeHover: '#EA580C',
+  orangeMuted: 'rgba(249, 115, 22, 0.12)',
+  cta: '#C2410C', // Primary Action (WCAG AA Compliant on White text)
+  ctaHover: '#9A3412',
+  ctaForeground: '#FFFFFF',
+};
+
+// SEMANTIC COLORS
+export const semantic = {
+  success: {
+    base: '#16A34A',
+    foreground: '#4ADE80', // Dark theme text
+    lightForeground: '#166534', // Light theme text
+    muted: 'rgba(22, 163, 74, 0.15)',
+    lightMuted: '#F0FDF4',
+    border: 'rgba(22, 163, 74, 0.3)',
+  },
+  warning: {
+    base: '#D97706',
+    foreground: '#FBBF24',
+    lightForeground: '#92400E',
+    muted: 'rgba(217, 119, 6, 0.15)',
+    lightMuted: '#FFFBEB',
+    border: 'rgba(217, 119, 6, 0.3)',
+  },
+  destructive: {
+    base: '#DC2626',
+    foreground: '#F87171',
+    lightForeground: '#991B1B',
+    muted: 'rgba(220, 38, 38, 0.15)',
+    lightMuted: '#FEF2F2',
+    border: 'rgba(220, 38, 38, 0.3)',
+  },
+  info: {
+    base: '#2563EB',
+    foreground: '#60A5FA',
+    lightForeground: '#1E40AF',
+    muted: 'rgba(37, 99, 235, 0.15)',
+    lightMuted: '#EFF6FF',
+    border: 'rgba(37, 99, 235, 0.3)',
+  },
+};
+
+// DATA VISUALIZATION PALETTE
+export const charts = {
+  1: '#F97316', // Brand Orange
+  2: '#2563EB', // Blue
+  3: '#16A34A', // Green
+  4: '#D97706', // Amber
+  5: '#DC2626', // Red
+  6: '#71717A', // Neutral Gray
+};
+
+// THEME PALETTES
 export const colors = {
-  // Primary
-  ink: '#15171B', // Materu Ink (Deep Charcoal)
-  ivory: '#F3F1EB', // Warm Ivory
-  orange: '#FF5A36', // Signal Orange
+  // Brand & CTA
+  brand: brand.orange,
+  cta: brand.cta,
+  ctaForeground: brand.ctaForeground,
 
-  // Neutrals
-  white: '#FFFFFF',
-  gray: '#9FA4AC', // Soft Gray
-
-  // Dark theme
+  // Dark Theme (Default MATERU Experience)
   dark: {
-    bg: '#15171B',
-    surface: '#181B20',
-    'surface-hover': '#22262C',
-    border: '#2A2E35',
-    text: '#F3F1EB',
-    accent: '#FF5A36',
+    bg: '#0B0C0E',
+    nav: '#111111',
+    surface: '#171717',
+    surfaceElevated: '#1F1F1F',
+    surfaceHover: '#262626',
+    border: '#2A2A2A',
+    borderSubtle: 'rgba(255, 255, 255, 0.08)',
+    borderStrong: '#3F3F46',
+    textPrimary: '#F3F1EB',
+    textSecondary: '#A1A1AA',
+    textMuted: '#71717A',
+    accent: brand.orange,
   },
 
-  // Light theme
+  // Light Theme (Clean Light Workspace Foundation)
   light: {
-    bg: '#F3F1EB',
+    bg: '#F7F7F5',
+    nav: '#111111',
     surface: '#FFFFFF',
-    text: '#15171B',
-    accent: '#FF5A36',
+    surfaceElevated: '#F1F1EF',
+    surfaceHover: '#FAFAF8',
+    border: '#E5E5E5',
+    borderSubtle: '#F1F1EF',
+    borderStrong: '#D4D4D4',
+    textPrimary: '#171717',
+    textSecondary: '#737373',
+    textMuted: '#A3A3A3',
+    accent: brand.orange,
   },
+
+  // Semantic
+  semantic,
+  charts,
+
+  // Backward compatibility
+  ink: '#0B0C0E',
+  ivory: '#F3F1EB',
+  orange: brand.orange,
+  white: '#FFFFFF',
+  gray: '#A1A1AA',
 };
 
 // TYPOGRAPHY
@@ -33,6 +112,7 @@ export const typography = {
   font: {
     primary: 'Manrope',
     fallback: 'Inter, Segoe UI, Arial, sans-serif',
+    mono: 'JetBrains Mono, Fira Code, monospace',
   },
   weights: {
     light: 400,
@@ -80,9 +160,12 @@ export const spacing = {
 // RADIUS
 export const radius = {
   sm: '8px',
-  md: '14px',
-  lg: '20px',
-  full: '999px',
+  md: '12px',
+  lg: '16px',
+  xl: '20px',
+  '2xl': '24px',
+  '3xl': '32px',
+  full: '9999px',
 };
 
 // MOTION

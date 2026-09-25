@@ -67,7 +67,7 @@ export const Hero: React.FC = () => {
           className="object-cover"
         />
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/50 to-ink/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background/80" />
       </div>
 
       {/* Content */}
@@ -83,7 +83,7 @@ export const Hero: React.FC = () => {
             <motion.h1
               key={index}
               variants={wordVariants}
-              className="text-5xl font-extrabold text-ivory leading-tight md:text-7xl lg:text-8xl"
+              className="text-5xl font-extrabold text-foreground leading-tight md:text-7xl lg:text-8xl"
             >
               {word}
             </motion.h1>
@@ -97,7 +97,7 @@ export const Hero: React.FC = () => {
           animate="visible"
           className="mt-12 max-w-2xl"
         >
-          <p className="text-lg text-gray font-regular md:text-xl">
+          <p className="text-lg text-text-secondary font-regular md:text-xl">
             We design and build digital products, platforms and systems for
             ambitious businesses.
           </p>
@@ -130,14 +130,14 @@ export const Hero: React.FC = () => {
             transition={{ duration: 2, repeat: Infinity }}
             className="flex flex-col items-center gap-2"
           >
-            <span className="text-xs font-semibold text-gray uppercase tracking-wide">
+            <span className="text-xs font-semibold text-text-muted uppercase tracking-wide">
               Scroll
             </span>
             <svg
               width="20"
               height="20"
               viewBox="0 0 20 20"
-              className="text-orange"
+              className="text-brand"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"

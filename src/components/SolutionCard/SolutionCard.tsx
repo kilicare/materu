@@ -25,8 +25,8 @@ export const SolutionCard: React.FC<SolutionCardProps> = ({
       <div
         className={`relative overflow-hidden rounded-3xl border transition-all duration-300 p-8 md:p-10 shadow-sm ${
           isSelected
-            ? 'border-orange bg-bg-surface shadow-[0_15px_35px_-10px_rgba(255,90,54,0.25)] ring-1 ring-orange/30'
-            : 'border-white/[0.08] bg-bg-surface/70 hover:border-orange/50 hover:bg-bg-surface'
+            ? 'border-brand bg-surface shadow-[0_15px_35px_-10px_rgba(249,115,22,0.25)] ring-1 ring-brand/30'
+            : 'border-border bg-surface/70 hover:border-brand/50 hover:bg-surface'
         }`}
       >
         {/* Icon */}
@@ -35,7 +35,7 @@ export const SolutionCard: React.FC<SolutionCardProps> = ({
         {/* Title */}
         <h3
           className={`mb-3 text-2xl font-bold transition-colors duration-base ${
-            isSelected ? 'text-orange' : 'text-ivory group-hover:text-orange'
+            isSelected ? 'text-brand' : 'text-foreground group-hover:text-brand'
           }`}
         >
           {solution.title}
@@ -44,7 +44,7 @@ export const SolutionCard: React.FC<SolutionCardProps> = ({
         {/* Short Description */}
         <p
           className={`text-sm transition-colors duration-base ${
-            isSelected ? 'text-ivory' : 'text-gray group-hover:text-ivory'
+            isSelected ? 'text-foreground' : 'text-text-secondary group-hover:text-foreground'
           }`}
         >
           {solution.shortDescription}
@@ -58,7 +58,7 @@ export const SolutionCard: React.FC<SolutionCardProps> = ({
         >
           <span
             className={`text-sm font-semibold transition-colors duration-base ${
-              isSelected ? 'text-orange' : 'text-gray group-hover:text-orange'
+              isSelected ? 'text-brand' : 'text-text-secondary group-hover:text-brand'
             }`}
           >
             Explore
@@ -79,7 +79,7 @@ export const SolutionCard: React.FC<SolutionCardProps> = ({
 
         {/* Indicator Line */}
         <motion.div
-          className="absolute bottom-0 left-0 h-1 bg-orange"
+          className="absolute bottom-0 left-0 h-1 bg-brand"
           initial={{ width: 0 }}
           animate={{ width: isSelected ? '100%' : 0 }}
           transition={{ duration: 0.24 }}

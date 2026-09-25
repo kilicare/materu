@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'dark' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'dark' | 'ghost' | 'destructive';
   size?: 'sm' | 'md' | 'lg';
   children: React.ReactNode;
   href?: string;
@@ -108,11 +108,15 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantStyles = {
       primary:
-        'bg-orange text-ivory hover:bg-orange/90 focus:ring-orange focus:ring-offset-bg-primary',
+        'bg-cta text-cta-foreground hover:bg-cta-hover focus:ring-cta focus:ring-offset-background shadow-sm',
       secondary:
-        'bg-bg-surface text-ivory border border-orange hover:border-orange/80 focus:ring-orange focus:ring-offset-bg-primary',
-      dark: 'bg-bg-surface text-ivory hover:bg-bg-surface-hover focus:ring-orange focus:ring-offset-bg-primary',
-      ghost: 'text-text-primary hover:text-accent focus:ring-orange',
+        'bg-surface text-foreground border border-border hover:border-border-strong hover:bg-surface-hover focus:ring-brand focus:ring-offset-background',
+      dark:
+        'bg-surface text-foreground border border-border hover:bg-surface-hover hover:border-border-strong focus:ring-brand focus:ring-offset-background',
+      ghost:
+        'text-foreground hover:text-brand hover:bg-surface/60 focus:ring-brand focus:ring-offset-background',
+      destructive:
+        'bg-destructive text-white hover:bg-destructive/90 focus:ring-destructive focus:ring-offset-background shadow-sm',
     };
 
     const sizeStyles = {

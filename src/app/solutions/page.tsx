@@ -47,7 +47,7 @@ export default function SolutionsPage() {
             className="object-cover"
           />
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/50 to-ink/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background/80" />
         </div>
 
         <motion.div
@@ -88,17 +88,17 @@ export default function SolutionsPage() {
                 className="group"
               >
                 <Link href={`/solutions/${solution.slug}`} className="block">
-                  <div className="rounded-2xl border border-orange/20 bg-bg-surface p-8 hover:border-orange/50 hover:shadow-lg transition-all duration-base h-full">
+                  <div className="rounded-3xl border border-border bg-surface p-8 hover:border-brand/50 hover:shadow-[0_20px_40px_-15px_rgba(249,115,22,0.15)] transition-all duration-300 h-full group-hover:-translate-y-1">
                     <div className="mb-6 text-6xl">{solution.icon}</div>
-                    <h3 className="mb-3 text-2xl font-bold text-ivory group-hover:text-orange transition-colors">
+                    <h3 className="mb-3 text-2xl font-bold text-foreground group-hover:text-brand transition-colors">
                       {solution.title}
                     </h3>
-                    <p className="mb-6 text-sm text-gray">
+                    <p className="mb-6 text-sm text-text-secondary">
                       {solution.subtitle}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {solution.technologies.slice(0, 3).map((tech, index) => (
-                        <Badge key={index} variant="secondary" size="sm">
+                        <Badge key={index} variant="brand" size="sm">
                           {tech}
                         </Badge>
                       ))}

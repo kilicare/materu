@@ -78,13 +78,13 @@ export const Process: React.FC = () => {
 
       {/* Progress Bar */}
       <motion.div
-        className="mb-16 h-1 w-full overflow-hidden rounded-full bg-bg-surface md:mb-20"
+        className="mb-16 h-1 w-full overflow-hidden rounded-full bg-surface md:mb-20 border border-border-subtle"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
         <motion.div
-          className="h-full bg-gradient-to-r from-orange to-orange/50"
+          className="h-full bg-gradient-to-r from-brand to-brand/50"
           animate={{ width: `${scrollProgress * 100}%` }}
           transition={{ duration: 0.2 }}
         />
@@ -121,9 +121,9 @@ export const Process: React.FC = () => {
         viewport={{ once: true }}
         className="mt-20 text-center"
       >
-        <p className="text-gray">
+        <p className="text-text-secondary">
           Ready to start the journey?{' '}
-          <a href="/start-a-project" className="font-bold text-orange hover:text-ivory transition-colors">
+          <a href="/start-a-project" className="font-bold text-brand hover:text-foreground transition-colors">
             Let&apos;s build together →
           </a>
         </p>

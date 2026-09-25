@@ -24,7 +24,7 @@ export const Step3Description: React.FC = () => {
       </div>
 
       <div>
-        <label className="block mb-3 font-semibold text-ivory">
+        <label className="block mb-3 font-semibold text-foreground">
           Project Description *
         </label>
         <textarea
@@ -34,17 +34,17 @@ export const Step3Description: React.FC = () => {
           }
           placeholder="Describe your project, goals, target users, and any specific requirements..."
           rows={8}
-          className="w-full rounded-lg bg-bg-surface px-6 py-4 text-ivory placeholder-gray/50 focus:outline-none focus:ring-2 focus:ring-orange resize-none border border-gray/20"
+          className="w-full rounded-lg bg-surface px-6 py-4 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand resize-none border border-border transition-all"
           aria-label="Project description"
         />
-        <p className="text-xs text-gray mt-2">
+        <p className="text-xs text-muted-foreground mt-2">
           {formData.projectDescription.length} characters
         </p>
       </div>
 
-      <div className="p-6 rounded-lg bg-orange/10 border border-orange/20">
-        <p className="text-sm text-gray">
-          💡 <strong>Tip:</strong> Include information about your business,
+      <div className="p-6 rounded-lg bg-brand-muted border border-brand/20">
+        <p className="text-sm text-text-secondary">
+          💡 <strong className="text-foreground">Tip:</strong> Include information about your business,
           users, timeline expectations, and any existing systems or integrations
           needed.
         </p>

@@ -16,11 +16,11 @@ const footerLinks = [
 ];
 
 const socialLinks = [
-  { label: 'Instagram', href: 'https://instagram.com/materu.tech', icon: 'instagram', color: 'hover:text-pink-400' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/gervas-materu', icon: 'linkedin', color: 'hover:text-blue-400' },
-  { label: 'GitHub', href: 'https://github.com/materu', icon: 'github', color: 'hover:text-gray-300' },
-  { label: 'Twitter', href: 'https://twitter.com/materu', icon: 'twitter', color: 'hover:text-gray-300' },
-  { label: 'WhatsApp', href: 'https://wa.me/255650745642', icon: 'whatsapp', color: 'hover:text-green-400' },
+  { label: 'Instagram', href: 'https://instagram.com/materu.tech', icon: 'instagram' },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/gervas-materu', icon: 'linkedin' },
+  { label: 'GitHub', href: 'https://github.com/materu', icon: 'github' },
+  { label: 'Twitter', href: 'https://twitter.com/materu', icon: 'twitter' },
+  { label: 'WhatsApp', href: 'https://wa.me/255650745642', icon: 'whatsapp' },
 ];
 
 const containerVariants = {
@@ -47,7 +47,7 @@ const itemVariants = {
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="border-t border-gray/10 bg-ink text-ivory">
+    <footer className="border-t border-border bg-background text-foreground">
       <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-24">
         {/* Top Section */}
         <motion.div
@@ -68,7 +68,7 @@ export const Footer: React.FC = () => {
               style={{ width: 'auto', height: '32px' }}
             />
             <Metadata>Digital Products</Metadata>
-            <p className="text-sm text-gray leading-relaxed max-w-xs">
+            <p className="text-sm text-text-secondary leading-relaxed max-w-xs">
               A modern symbol for a bigger tomorrow. We design and build
               digital products that move people forward.
             </p>
@@ -81,9 +81,9 @@ export const Footer: React.FC = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2, y: -2 }}
+                  whileHover={{ scale: 1.15, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className={`text-xl transition-all duration-base ${social.color}`}
+                  className="text-xl text-text-secondary hover:text-brand transition-colors duration-base"
                   title={social.label}
                 >
                   {social.icon === 'instagram' && (
@@ -118,12 +118,12 @@ export const Footer: React.FC = () => {
 
           {/* Links Column 1 */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <h4 className="font-semibold text-ivory">Company</h4>
+            <h4 className="font-semibold text-foreground">Company</h4>
             <div className="space-y-3">
               {footerLinks.slice(0, 3).map(link => (
                 <Link key={link.href} href={link.href} underline={false}>
                   <motion.span
-                    className="text-sm text-gray hover:text-orange transition-colors"
+                    className="text-sm text-text-secondary hover:text-brand transition-colors"
                     whileHover={{ x: 4 }}
                   >
                     {link.label}
@@ -135,12 +135,12 @@ export const Footer: React.FC = () => {
 
           {/* Links Column 2 */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <h4 className="font-semibold text-ivory">Resources</h4>
+            <h4 className="font-semibold text-foreground">Resources</h4>
             <div className="space-y-3">
               {footerLinks.slice(3).map(link => (
                 <Link key={link.href} href={link.href} underline={false}>
                   <motion.span
-                    className="text-sm text-gray hover:text-orange transition-colors"
+                    className="text-sm text-text-secondary hover:text-brand transition-colors"
                     whileHover={{ x: 4 }}
                   >
                     {link.label}
@@ -152,11 +152,11 @@ export const Footer: React.FC = () => {
 
           {/* Contact CTA */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <h4 className="font-semibold text-ivory">Connect</h4>
+            <h4 className="font-semibold text-foreground">Connect</h4>
             <div className="space-y-3">
               <a
                 href="mailto:hello@materu.com"
-                className="block text-sm text-gray hover:text-orange transition-colors"
+                className="block text-sm text-text-secondary hover:text-brand transition-colors"
               >
                 hello@materu.com
               </a>
@@ -164,13 +164,13 @@ export const Footer: React.FC = () => {
                 href="https://wa.me/255650745642"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-sm text-orange hover:text-ivory transition-colors font-semibold"
+                className="block text-sm text-brand hover:text-foreground transition-colors font-semibold"
               >
                 WhatsApp Chat
               </a>
               <a
                 href="/contact"
-                className="block text-sm text-gray hover:text-orange transition-colors"
+                className="block text-sm text-text-secondary hover:text-brand transition-colors"
               >
                 Contact Form
               </a>
@@ -183,7 +183,7 @@ export const Footer: React.FC = () => {
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
-          className="mb-8 h-px origin-left bg-gradient-to-r from-orange/50 to-transparent"
+          className="mb-8 h-px origin-left bg-gradient-to-r from-brand/40 to-transparent"
         />
 
         {/* Bottom Section */}
@@ -205,17 +205,17 @@ export const Footer: React.FC = () => {
             className="flex gap-6 flex-wrap"
           >
             <Link href="/privacy" underline={false}>
-              <Metadata className="hover:text-orange transition-colors">
+              <Metadata className="hover:text-brand transition-colors">
                 Privacy Policy
               </Metadata>
             </Link>
             <Link href="/terms" underline={false}>
-              <Metadata className="hover:text-orange transition-colors">
+              <Metadata className="hover:text-brand transition-colors">
                 Terms of Service
               </Metadata>
             </Link>
             <Link href="/sitemap" underline={false}>
-              <Metadata className="hover:text-orange transition-colors">
+              <Metadata className="hover:text-brand transition-colors">
                 Sitemap
               </Metadata>
             </Link>
@@ -228,9 +228,9 @@ export const Footer: React.FC = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-12 text-center border-t border-gray/10 pt-8"
+          className="mt-12 text-center border-t border-border pt-8"
         >
-          <p className="text-sm text-gray italic">
+          <p className="text-sm text-muted-foreground italic">
             &ldquo;A modern symbol for a bigger tomorrow.&rdquo;
           </p>
         </motion.div>

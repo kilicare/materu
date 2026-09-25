@@ -55,19 +55,19 @@ export const Step1Category: React.FC = () => {
                 subcategory: '', // Reset subcategory
               });
             }}
-            className={`p-6 rounded-2xl border-2 transition-all text-left hover:shadow-lg ${
+            className={`p-6 rounded-2xl border-2 transition-all text-left hover:shadow-md ${
               formData.category === category.id
-                ? 'border-orange bg-orange/10'
-                : 'border-gray/20 bg-bg-surface hover:border-orange/50'
+                ? 'border-brand bg-brand-muted'
+                : 'border-border bg-surface hover:border-border-strong hover:bg-surface-elevated'
             }`}
             whileHover={{ y: -4 }}
             whileTap={{ scale: 0.98 }}
           >
             <div className="text-4xl mb-3">{category.icon}</div>
-            <h4 className="text-lg font-bold text-ivory mb-2">
+            <h4 className="text-lg font-bold text-foreground mb-2">
               {category.name}
             </h4>
-            <p className="text-sm text-gray">{category.description}</p>
+            <p className="text-sm text-text-secondary">{category.description}</p>
           </motion.button>
         ))}
       </div>

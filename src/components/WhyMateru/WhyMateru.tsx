@@ -70,9 +70,9 @@ export const WhyMateru: React.FC = () => {
         transition={{ delay: 0.3 }}
         className="mt-20 text-center"
       >
-        <p className="text-lg text-gray">
+        <p className="text-lg text-text-secondary">
           Ready to build something that matters?{' '}
-          <a href="/start-a-project" className="font-bold text-orange hover:text-ivory transition-colors">
+          <a href="/start-a-project" className="font-bold text-brand hover:text-foreground transition-colors">
             Let&apos;s talk →
           </a>
         </p>

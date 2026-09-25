@@ -27,8 +27,8 @@ export const ProcessStepComponent: React.FC<ProcessStepProps> = ({
       <motion.div
         className={`relative flex h-20 w-20 items-center justify-center rounded-full border-2 transition-all duration-base ${
           isActive
-            ? 'border-orange bg-orange/10 scale-110'
-            : 'border-gray/30 bg-bg-surface hover:border-orange/50'
+            ? 'border-brand bg-brand/10 scale-110 shadow-md ring-2 ring-brand/20'
+            : 'border-border bg-surface hover:border-brand/50'
         }`}
         animate={isActive ? { scale: 1.1 } : { scale: 1 }}
         whileHover={{ scale: 1.05 }}
@@ -38,7 +38,7 @@ export const ProcessStepComponent: React.FC<ProcessStepProps> = ({
         {/* Number */}
         <motion.div
           className={`absolute -top-2 -right-2 flex h-8 w-8 items-center justify-center rounded-full font-bold text-sm transition-all duration-base ${
-            isActive ? 'bg-orange text-ivory' : 'bg-gray/20 text-gray'
+            isActive ? 'bg-brand text-white shadow-sm' : 'bg-surface-elevated text-text-secondary border border-border'
           }`}
           animate={isActive ? { scale: 1.2, rotate: 0 } : { scale: 1, rotate: -10 }}
         >
@@ -49,14 +49,14 @@ export const ProcessStepComponent: React.FC<ProcessStepProps> = ({
       {/* Title */}
       <h3
         className={`text-center text-xl font-bold transition-colors duration-base ${
-          isActive ? 'text-orange' : 'text-ivory'
+          isActive ? 'text-brand' : 'text-foreground'
         }`}
       >
         {step.title}
       </h3>
 
       {/* Description */}
-      <p className="text-center text-sm text-gray max-w-xs">
+      <p className="text-center text-sm text-text-secondary max-w-xs">
         {step.description}
       </p>
 
@@ -71,16 +71,16 @@ export const ProcessStepComponent: React.FC<ProcessStepProps> = ({
         transition={{ duration: 0.3 }}
         className="w-full overflow-hidden"
       >
-        <div className="space-y-2 border-t border-orange/20 pt-4 mt-4">
+        <div className="space-y-2 border-t border-brand/20 pt-4 mt-4">
           {step.details.map((detail: string, idx: number) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, x: -10 }}
               animate={isActive ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
               transition={{ delay: idx * 0.05 }}
-              className="flex items-start gap-2 text-xs text-gray"
+              className="flex items-start gap-2 text-xs text-text-secondary"
             >
-              <span className="mt-1 text-orange">✓</span>
+              <span className="mt-1 text-brand">✓</span>
               <span>{detail}</span>
             </motion.div>
           ))}

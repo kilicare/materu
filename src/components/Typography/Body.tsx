@@ -5,7 +5,7 @@ interface BodyProps {
   children: React.ReactNode;
   size?: 'sm' | 'base' | 'lg';
   weight?: 'regular' | 'semibold' | 'bold';
-  color?: 'primary' | 'secondary';
+  color?: 'primary' | 'secondary' | 'muted';
   className?: string;
 }
 
@@ -31,8 +31,9 @@ export const Body: React.FC<BodyProps> = ({
   };
 
   const colorStyles = {
-    primary: 'text-text-primary',
+    primary: 'text-foreground',
     secondary: 'text-text-secondary',
+    muted: 'text-muted-foreground',
   };
 
   return (

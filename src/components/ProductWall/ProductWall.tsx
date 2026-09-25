@@ -80,7 +80,7 @@ export const ProductWall: React.FC = () => {
       >
         <Link
           href="/work"
-          className="inline-flex items-center gap-2 rounded-full bg-orange px-8 py-4 font-bold text-ivory hover:bg-orange/90 transition-all duration-base hover:scale-105"
+          className="inline-flex items-center gap-2 rounded-full bg-cta px-8 py-4 font-bold text-cta-foreground hover:bg-cta-hover transition-all duration-base hover:scale-105 shadow-md active:bg-cta-active"
         >
           View All Projects →
         </Link>

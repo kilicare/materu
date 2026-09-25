@@ -1,3 +1,5 @@
+import { brand, colors } from './tokens';
+
 export interface Solution {
   id: string;
   title: string;
@@ -19,7 +21,7 @@ export const solutions: Solution[] = [
     description:
       'We build fast, beautiful websites that convert visitors into customers. From simple landing pages to complex e-commerce platforms.',
     icon: '🌐',
-    accentColor: '#FF5A36',
+    accentColor: brand.orange,
     href: '/solutions/websites',
     examples: ['Business websites', 'Landing pages', 'E-commerce', 'Booking websites'],
   },
@@ -31,7 +33,7 @@ export const solutions: Solution[] = [
     description:
       'Native and cross-platform applications that solve real problems. Scalable, maintainable, and user-focused.',
     icon: '📱',
-    accentColor: '#FF5A36',
+    accentColor: brand.orange,
     href: '/solutions/applications',
     examples: ['Web apps', 'Mobile apps', 'Native apps', 'Cross-platform'],
   },
@@ -43,7 +45,7 @@ export const solutions: Solution[] = [
     description:
       'Hospital systems, POS, inventory, HR, logistics. Purpose-built software that streamlines operations.',
     icon: '⚙️',
-    accentColor: '#FF5A36',
+    accentColor: brand.orange,
     href: '/solutions/business-systems',
     examples: ['Hospital management', 'Restaurant POS', 'School management', 'Inventory'],
   },
@@ -55,7 +57,7 @@ export const solutions: Solution[] = [
     description:
       'Scalable SaaS products with recurring revenue. Multi-tenant architecture, user management, and analytics.',
     icon: '☁️',
-    accentColor: '#FF5A36',
+    accentColor: brand.orange,
     href: '/solutions/saas',
     examples: ['Multi-tenant platforms', 'Analytics dashboards', 'Subscription apps', 'Portals'],
   },
@@ -67,7 +69,7 @@ export const solutions: Solution[] = [
     description:
       'Leverage AI to automate workflows, extract insights, and build intelligent assistants that work 24/7.',
     icon: '🤖',
-    accentColor: '#FF5A36',
+    accentColor: brand.orange,
     href: '/solutions/ai',
     examples: ['AI assistants', 'Workflow automation', 'AI integrations', 'Data processing'],
   },
@@ -79,7 +81,7 @@ export const solutions: Solution[] = [
     description:
       'Complete e-commerce solutions with payment processing, inventory management, and customer analytics.',
     icon: '🛒',
-    accentColor: '#FF5A36',
+    accentColor: brand.orange,
     href: '/solutions/ecommerce',
     examples: ['Online stores', 'Multi-vendor markets', 'Subscription stores', 'Digital products'],
   },
@@ -91,7 +93,7 @@ export const solutions: Solution[] = [
     description:
       'Have a unique challenge? We build custom solutions tailored to your exact needs and workflows.',
     icon: '✨',
-    accentColor: '#FF5A36',
+    accentColor: brand.orange,
     href: '/solutions/custom',
     examples: ['Custom software', 'Integration projects', 'Legacy modernization', 'One-of-a-kind builds'],
   },
@@ -103,7 +105,7 @@ export const solutions: Solution[] = [
     description:
       'Unsure what you need? Describe your challenge and we\'ll guide you to the right solution.',
     icon: '🤔',
-    accentColor: '#9FA4AC',
+    accentColor: colors.gray,
     href: '/start-a-project',
     examples: ['Discovery call', 'Consultation', 'Custom assessment'],
   },

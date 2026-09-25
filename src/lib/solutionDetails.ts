@@ -1,3 +1,5 @@
+import { brand } from './tokens';
+
 export interface Feature {
   id: string;
   title: string;
@@ -42,7 +44,7 @@ export const solutionDetails: Record<string, SolutionDetail> = {
     longDescription:
       'Your website is often the first impression potential customers have of your business. We design and build websites that not only look stunning but also convert visitors into customers. Our websites are built with performance, accessibility, and SEO in mind.',
     icon: '🌐',
-    accentColor: '#FF5A36',
+    accentColor: brand.orange,
     heroImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
     features: [
       {
@@ -122,7 +124,7 @@ export const solutionDetails: Record<string, SolutionDetail> = {
     longDescription:
       'Web and mobile applications that your users love. We build apps using modern technologies and best practices, ensuring they are scalable, maintainable, and delightful to use.',
     icon: '📱',
-    accentColor: '#FF5A36',
+    accentColor: brand.orange,
     heroImage: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&q=80',
     features: [
       {
@@ -202,7 +204,7 @@ export const solutionDetails: Record<string, SolutionDetail> = {
     longDescription:
       'Specialized business systems designed for specific industries. From hospital management to restaurant POS, we build software that solves real operational challenges and improves efficiency.',
     icon: '⚙️',
-    accentColor: '#FF5A36',
+    accentColor: brand.orange,
     heroImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
     features: [
       {
@@ -282,7 +284,7 @@ export const solutionDetails: Record<string, SolutionDetail> = {
     longDescription:
       'Build a scalable SaaS business with us. We design and develop multi-tenant platforms that support unlimited customers with secure data isolation, subscription management, and comprehensive analytics.',
     icon: '☁️',
-    accentColor: '#FF5A36',
+    accentColor: brand.orange,
     heroImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
     features: [
       {
@@ -362,7 +364,7 @@ export const solutionDetails: Record<string, SolutionDetail> = {
     longDescription:
       'Integrate AI into your business to automate tasks, improve customer service, and gain insights from your data. We build AI-powered solutions using cutting-edge models and best practices.',
     icon: '🤖',
-    accentColor: '#FF5A36',
+    accentColor: brand.orange,
     heroImage: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80',
     features: [
       {
@@ -442,7 +444,7 @@ export const solutionDetails: Record<string, SolutionDetail> = {
     longDescription:
       'Launch your online store with a platform built for conversion. We handle the technical complexity so you can focus on selling.',
     icon: '🛒',
-    accentColor: '#FF5A36',
+    accentColor: brand.orange,
     heroImage: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=1200&q=80',
     features: [
       {

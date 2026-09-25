@@ -44,7 +44,7 @@ export default function WorkPage() {
             className="object-cover"
           />
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/50 to-ink/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background/80" />
         </div>
 
         <motion.div

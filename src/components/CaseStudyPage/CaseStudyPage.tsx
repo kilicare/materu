@@ -62,10 +62,10 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
       <Section bgColor="primary" padding="md">
         <div className="flex items-center gap-3 text-sm">
           <Link href="/work" underline={false}>
-            <span className="text-gray hover:text-orange">All Work</span>
+            <span className="text-text-secondary hover:text-brand">All Work</span>
           </Link>
-          <span className="text-gray">/</span>
-          <span className="text-ivory">{caseStudy.title}</span>
+          <span className="text-text-muted">/</span>
+          <span className="text-foreground">{caseStudy.title}</span>
         </div>
       </Section>
 
@@ -82,7 +82,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
             className="object-cover"
           />
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/50 to-ink/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background/80" />
         </div>
 
         <motion.div
@@ -92,7 +92,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
           className="text-center mb-12 relative z-10"
         >
           <motion.div variants={itemVariants} className="mb-4">
-            <Badge variant="orange" size="md">
+            <Badge variant="brand" size="md">
               {caseStudy.category}
             </Badge>
           </motion.div>
@@ -109,7 +109,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
         </motion.div>
 
         {/* Hero Image */}
-        <div className="relative h-96 w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
+        <div className="relative h-96 w-full overflow-hidden rounded-3xl border border-border shadow-2xl">
           <Image
             src={caseStudy.heroImage}
             alt={caseStudy.imageAlt}
@@ -142,12 +142,12 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="border-l-4 border-orange pl-6"
+                  className="border-l-4 border-brand pl-6"
                 >
-                  <h4 className="mb-2 font-bold text-ivory">
+                  <h4 className="mb-2 font-bold text-foreground">
                     {challenge.title}
                   </h4>
-                  <p className="text-gray">{challenge.description}</p>
+                  <p className="text-text-secondary">{challenge.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -172,13 +172,13 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="rounded-lg bg-bg-surface p-6 border border-orange/20"
+                  className="rounded-xl bg-surface p-6 border border-border shadow-sm"
                 >
                   <div className="mb-3 text-3xl">{solution.icon}</div>
-                  <h4 className="mb-2 font-bold text-ivory">
+                  <h4 className="mb-2 font-bold text-foreground">
                     {solution.title}
                   </h4>
-                  <p className="text-sm text-gray">{solution.description}</p>
+                  <p className="text-sm text-text-secondary">{solution.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -213,13 +213,13 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="rounded-2xl bg-bg-surface border border-orange/20 p-8 text-center"
+                className="rounded-2xl bg-surface border border-border p-8 text-center shadow-sm"
               >
-                <div className="mb-4 text-5xl font-bold text-orange">
+                <div className="mb-4 text-5xl font-bold text-brand">
                   {outcome.value}
                 </div>
-                <h4 className="mb-2 font-bold text-ivory">{outcome.metric}</h4>
-                <p className="text-sm text-gray">{outcome.description}</p>
+                <h4 className="mb-2 font-bold text-foreground">{outcome.metric}</h4>
+                <p className="text-sm text-text-secondary">{outcome.description}</p>
               </motion.div>
             ))}
           </Grid>
@@ -247,8 +247,8 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
                   variants={itemVariants}
                   className="flex items-center gap-3"
                 >
-                  <span className="text-orange">✓</span>
-                  <span className="text-ivory">{feature}</span>
+                  <span className="text-brand">✓</span>
+                  <span className="text-foreground">{feature}</span>
                 </motion.div>
               ))}
             </motion.div>
@@ -273,9 +273,9 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="rounded-full bg-orange/10 px-4 py-2 border border-orange/20"
+                  className="rounded-full bg-brand/10 px-4 py-2 border border-brand/20"
                 >
-                  <span className="text-sm font-semibold text-orange">{tech}</span>
+                  <span className="text-sm font-semibold text-brand">{tech}</span>
                 </motion.div>
               ))}
             </motion.div>
@@ -298,13 +298,13 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
             </motion.div>
 
             <motion.div variants={itemVariants} className="mb-8">
-              <p className="text-xl text-ivory leading-relaxed">
+              <p className="text-xl text-foreground leading-relaxed">
                 {caseStudy.testimonial.text}
               </p>
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <p className="font-bold text-orange">{caseStudy.testimonial.author}</p>
+              <p className="font-bold text-brand">{caseStudy.testimonial.author}</p>
               <Metadata>
                 {caseStudy.testimonial.role} at {caseStudy.testimonial.company}
               </Metadata>
@@ -344,7 +344,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
                   className="group cursor-pointer"
                 >
                   <Link href={`/work/${project.slug}`} underline={false}>
-                    <div className="rounded-3xl overflow-hidden bg-bg-surface border border-white/[0.08] hover:border-orange/50 hover:shadow-[0_20px_40px_-15px_rgba(255,90,54,0.15)] transition-all duration-300 hover:-translate-y-1">
+                    <div className="rounded-3xl overflow-hidden bg-surface border border-border hover:border-brand/50 hover:shadow-[0_20px_40px_-15px_rgba(249,115,22,0.15)] transition-all duration-300 hover:-translate-y-1">
                       <div className="relative h-48 overflow-hidden rounded-t-3xl">
                         <Image
                           src={project.imageUrl}
@@ -353,11 +353,11 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
                           className="object-cover group-hover:scale-106 transition-transform duration-500 ease-out"
                         />
                       </div>
-                      <div className="p-6 bg-bg-surface">
-                        <Badge variant="orange" size="sm" className="mb-3">
+                      <div className="p-6 bg-surface">
+                        <Badge variant="brand" size="sm" className="mb-3">
                           {project.category}
                         </Badge>
-                        <h3 className="font-bold text-ivory group-hover:text-orange transition-colors">
+                        <h3 className="font-bold text-foreground group-hover:text-brand transition-colors">
                           {project.title}
                         </h3>
                       </div>

@@ -46,7 +46,7 @@ export const Step4Details: React.FC = () => {
 
       {/* Budget */}
       <motion.div variants={itemVariants}>
-        <label className="block mb-4 font-semibold text-ivory">
+        <label className="block mb-4 font-semibold text-foreground">
           Budget Range
         </label>
         <div className="space-y-3">
@@ -56,16 +56,16 @@ export const Step4Details: React.FC = () => {
               onClick={() => updateFormData({ budget: range.id })}
               className={`w-full p-4 rounded-lg border-2 transition-all text-left ${
                 formData.budget === range.id
-                  ? 'border-orange bg-orange/10'
-                  : 'border-gray/20 bg-bg-surface hover:border-orange/50'
+                  ? 'border-brand bg-brand-muted'
+                  : 'border-border bg-surface hover:border-border-strong hover:bg-surface-elevated'
               }`}
               whileHover={{ x: 4 }}
               whileTap={{ scale: 0.98 }}
             >
               <div className="flex items-center justify-between">
-                <span className="font-semibold text-ivory">{range.label}</span>
+                <span className="font-semibold text-foreground">{range.label}</span>
                 {formData.budget === range.id && (
-                  <span className="text-orange">✓</span>
+                  <span className="text-brand font-bold">✓</span>
                 )}
               </div>
             </motion.button>
@@ -75,7 +75,7 @@ export const Step4Details: React.FC = () => {
 
       {/* Timeline */}
       <motion.div variants={itemVariants}>
-        <label className="block mb-4 font-semibold text-ivory">
+        <label className="block mb-4 font-semibold text-foreground">
           Timeline
         </label>
         <div className="space-y-3">
@@ -85,16 +85,16 @@ export const Step4Details: React.FC = () => {
               onClick={() => updateFormData({ timeline: option.id })}
               className={`w-full p-4 rounded-lg border-2 transition-all text-left ${
                 formData.timeline === option.id
-                  ? 'border-orange bg-orange/10'
-                  : 'border-gray/20 bg-bg-surface hover:border-orange/50'
+                  ? 'border-brand bg-brand-muted'
+                  : 'border-border bg-surface hover:border-border-strong hover:bg-surface-elevated'
               }`}
               whileHover={{ x: 4 }}
               whileTap={{ scale: 0.98 }}
             >
               <div className="flex items-center justify-between">
-                <span className="font-semibold text-ivory">{option.label}</span>
+                <span className="font-semibold text-foreground">{option.label}</span>
                 {formData.timeline === option.id && (
-                  <span className="text-orange">✓</span>
+                  <span className="text-brand font-bold">✓</span>
                 )}
               </div>
             </motion.button>
@@ -104,7 +104,7 @@ export const Step4Details: React.FC = () => {
 
       {/* Existing Systems */}
       <motion.div variants={itemVariants}>
-        <label className="block mb-3 font-semibold text-ivory">
+        <label className="block mb-3 font-semibold text-foreground">
           Existing Systems or Integrations
         </label>
         <textarea
@@ -112,7 +112,7 @@ export const Step4Details: React.FC = () => {
           onChange={e => updateFormData({ existingSystems: e.target.value })}
           placeholder="E.g., Shopify, Stripe, Salesforce, custom APIs, etc. (optional)"
           rows={4}
-          className="w-full rounded-lg bg-bg-secondary px-6 py-4 text-ivory placeholder-gray/50 focus:outline-none focus:ring-2 focus:ring-orange resize-none border border-gray/20"
+          className="w-full rounded-lg bg-surface px-6 py-4 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand resize-none border border-border transition-all"
           aria-label="Existing systems"
         />
       </motion.div>

@@ -56,22 +56,22 @@ export const Step2Subcategory: React.FC = () => {
             key={sub.id}
             variants={itemVariants}
             onClick={() => updateFormData({ subcategory: sub.id })}
-            className={`w-full p-6 rounded-2xl border-2 transition-all text-left hover:shadow-lg ${
+            className={`w-full p-6 rounded-2xl border-2 transition-all text-left hover:shadow-md ${
               formData.subcategory === sub.id
-                ? 'border-orange bg-orange/10'
-                : 'border-gray/20 bg-bg-surface hover:border-orange/50'
+                ? 'border-brand bg-brand-muted'
+                : 'border-border bg-surface hover:border-border-strong hover:bg-surface-elevated'
             }`}
             whileHover={{ x: 4 }}
             whileTap={{ scale: 0.98 }}
           >
             <div className="flex items-start justify-between">
               <div>
-                <h4 className="text-lg font-bold text-ivory mb-1">
+                <h4 className="text-lg font-bold text-foreground mb-1">
                   {sub.name}
                 </h4>
-                <p className="text-sm text-gray">{sub.description}</p>
+                <p className="text-sm text-text-secondary">{sub.description}</p>
               </div>
-              <div className="text-xl ml-4">
+              <div className={`text-xl ml-4 font-bold ${formData.subcategory === sub.id ? 'text-brand' : 'text-muted-foreground'}`}>
                 {formData.subcategory === sub.id ? '✓' : '→'}
               </div>
             </div>

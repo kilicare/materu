@@ -79,11 +79,11 @@ export const FinalCTA: React.FC = () => {
           variants={itemVariants}
           className="mt-12"
         >
-          <p className="text-gray">
+          <p className="text-text-secondary">
             Or reach out directly:{' '}
             <a
               href="https://wa.me/255650745642"
-              className="font-bold text-orange hover:text-ivory transition-colors"
+              className="font-bold text-brand hover:text-foreground transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >

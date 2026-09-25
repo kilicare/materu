@@ -23,7 +23,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6 }}
-        className="group col-span-1 md:col-span-2 overflow-hidden rounded-3xl bg-bg-surface border border-white/[0.08] hover:border-orange/50 transition-all duration-300 shadow-lg hover:shadow-[0_20px_40px_-15px_rgba(255,90,54,0.15)] hover:-translate-y-1"
+        className="group col-span-1 md:col-span-2 overflow-hidden rounded-3xl bg-surface border border-border hover:border-brand/50 transition-all duration-300 shadow-lg hover:shadow-[0_20px_40px_-15px_rgba(249,115,22,0.15)] hover:-translate-y-1"
       >
         <div className="grid gap-0 md:grid-cols-2">
           {/* Image */}
@@ -42,7 +42,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
                 quality={85}
               />
             </motion.div>
-            <div className="absolute inset-0 bg-gradient-to-t from-bg-surface md:hidden to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-surface md:hidden to-transparent" />
           </div>
 
           {/* Content */}
@@ -53,7 +53,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <Badge variant="orange" size="sm" className="mb-4">
+              <Badge variant="brand" size="sm" className="mb-4">
                 {caseStudy.category}
               </Badge>
             </motion.div>
@@ -63,7 +63,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.15 }}
-              className="mb-4 text-3xl font-bold text-ivory md:text-4xl group-hover:text-orange transition-colors duration-240"
+              className="mb-4 text-3xl font-bold text-foreground md:text-4xl group-hover:text-brand transition-colors duration-240"
             >
               {caseStudy.title}
             </motion.h3>
@@ -73,7 +73,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="mb-6 text-gray md:text-lg leading-relaxed"
+              className="mb-6 text-text-secondary md:text-lg leading-relaxed"
             >
               {caseStudy.shortDescription}
             </motion.p>
@@ -83,7 +83,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.25 }}
-              className="inline-flex items-center gap-2 font-bold text-orange group-hover:translate-x-2 transition-transform duration-240"
+              className="inline-flex items-center gap-2 font-bold text-brand group-hover:translate-x-2 transition-transform duration-240"
             >
               <span>Read Case Study</span>
               <span>→</span>
@@ -102,7 +102,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6 }}
-      className="group flex flex-col justify-between overflow-hidden rounded-3xl bg-bg-surface hover:border-orange/50 border border-white/[0.08] transition-all duration-300 shadow-md hover:shadow-[0_20px_40px_-15px_rgba(255,90,54,0.15)] hover:-translate-y-1.5"
+      className="group flex flex-col justify-between overflow-hidden rounded-3xl bg-surface hover:border-brand/50 border border-border transition-all duration-300 shadow-md hover:shadow-[0_20px_40px_-15px_rgba(249,115,22,0.15)] hover:-translate-y-1.5"
     >
       {/* Image */}
       <div className="relative h-56 w-full overflow-hidden rounded-t-3xl">
@@ -120,7 +120,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
             quality={85}
           />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-t from-bg-surface via-transparent to-transparent opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80" />
       </div>
 
       {/* Content */}
@@ -132,16 +132,16 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <Badge variant="orange" size="sm" className="mb-3">
+            <Badge variant="brand" size="sm" className="mb-3">
               {caseStudy.category}
             </Badge>
           </motion.div>
 
-          <h3 className="mb-3 text-xl font-bold text-ivory md:text-2xl group-hover:text-orange transition-colors duration-240">
+          <h3 className="mb-3 text-xl font-bold text-foreground md:text-2xl group-hover:text-brand transition-colors duration-240">
             {caseStudy.title}
           </h3>
 
-          <p className="mb-6 text-sm text-gray leading-relaxed">
+          <p className="mb-6 text-sm text-text-secondary leading-relaxed">
             {caseStudy.shortDescription}
           </p>
         </div>
@@ -151,7 +151,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="inline-flex items-center gap-2 text-sm font-bold text-orange group-hover:translate-x-1.5 transition-transform duration-240"
+          className="inline-flex items-center gap-2 text-sm font-bold text-brand group-hover:translate-x-1.5 transition-transform duration-240"
         >
           <span>View Project</span>
           <span>→</span>

@@ -18,7 +18,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, items, onClose }
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
-          className="overflow-hidden border-t border-white/10 bg-ink/90 backdrop-blur-xl lg:hidden"
+          className="overflow-hidden border-t border-border bg-nav/95 backdrop-blur-xl lg:hidden"
           id="mobile-menu"
           role="menu"
         >
@@ -32,7 +32,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, items, onClose }
                 onClick={onClose}
               >
                 <Link href={item.href} underline={false}>
-                  <span className="block py-2 text-base font-semibold text-ivory hover:text-orange transition-colors">
+                  <span className="block py-2 text-base font-semibold text-foreground hover:text-brand transition-colors">
                     {item.label}
                   </span>
                 </Link>

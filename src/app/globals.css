@@ -55,22 +55,74 @@
 /* ==================== */
 
 :root {
-  /* Colors - Dark (default) */
-  --color-ink: #15171B;
-  --color-ivory: #F3F1EB;
-  --color-orange: #FF5A36;
-  --color-white: #FFFFFF;
-  --color-gray: #9FA4AC;
+  /* Core Brand Tokens */
+  --brand: #F97316;
+  --brand-foreground: #FFFFFF;
+  --brand-muted: rgba(249, 115, 22, 0.12);
+  --brand-hover: #EA580C;
 
-  /* Theme - Dark */
-  --bg-primary: #15171B;
-  --bg-secondary: #181B20;
-  --bg-surface: #1C1F24;
-  --bg-surface-hover: #22262C;
-  --border: #2A2E35;
-  --text-primary: #F3F1EB;
-  --text-secondary: #9FA4AC;
-  --accent: #FF5A36;
+  /* Primary CTA Tokens (WCAG AA Compliant) */
+  --cta: #C2410C;
+  --cta-foreground: #FFFFFF;
+  --cta-hover: #9A3412;
+  --cta-focus: #F97316;
+
+  /* Dark Theme Surfaces (Default MATERU Experience) */
+  --background: #0B0C0E;
+  --foreground: #F3F1EB;
+  --nav-background: #111111;
+  --nav-foreground: #F3F1EB;
+  --surface: #171717;
+  --surface-elevated: #1F1F1F;
+  --surface-hover: #262626;
+  --border: #2A2A2A;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: #3F3F46;
+  --muted: #1F1F1F;
+  --muted-foreground: #71717A;
+  --text-secondary: #A1A1AA;
+
+  /* Semantic Status Tokens (Dark Mode) */
+  --success: #16A34A;
+  --success-foreground: #4ADE80;
+  --success-muted: rgba(22, 163, 74, 0.15);
+  --success-border: rgba(22, 163, 74, 0.3);
+
+  --warning: #D97706;
+  --warning-foreground: #FBBF24;
+  --warning-muted: rgba(217, 119, 6, 0.15);
+  --warning-border: rgba(217, 119, 6, 0.3);
+
+  --destructive: #DC2626;
+  --destructive-foreground: #F87171;
+  --destructive-muted: rgba(220, 38, 38, 0.15);
+  --destructive-border: rgba(220, 38, 38, 0.3);
+
+  --info: #2563EB;
+  --info-foreground: #60A5FA;
+  --info-muted: rgba(37, 99, 235, 0.15);
+  --info-border: rgba(37, 99, 235, 0.3);
+
+  /* Data Visualization Tokens */
+  --chart-1: #F97316;
+  --chart-2: #2563EB;
+  --chart-3: #16A34A;
+  --chart-4: #D97706;
+  --chart-5: #DC2626;
+  --chart-6: #71717A;
+
+  /* Backward Compatibility Aliases */
+  --color-ink: var(--background);
+  --color-ivory: var(--foreground);
+  --color-orange: var(--brand);
+  --color-white: #FFFFFF;
+  --color-gray: var(--text-secondary);
+  --bg-primary: var(--background);
+  --bg-secondary: #111111;
+  --bg-surface: var(--surface);
+  --bg-surface-hover: var(--surface-hover);
+  --text-primary: var(--foreground);
+  --accent: var(--brand);
 
   /* Typography */
   --font-primary: 'Manrope', Inter, Segoe UI, Arial, sans-serif;
@@ -116,13 +168,50 @@
   --motion-safe: prefers-reduced-motion: reduce;
 }
 
-/* Light theme */
+/* Light theme (Clean Light Workspace Foundation) */
 [data-theme='light'] {
-  --bg-primary: #F3F1EB;
+  --background: #F7F7F5;
+  --foreground: #171717;
+  --nav-background: #111111;
+  --nav-foreground: #F3F1EB;
+  --surface: #FFFFFF;
+  --surface-elevated: #F1F1EF;
+  --surface-hover: #FAFAF8;
+  --border: #E5E5E5;
+  --border-subtle: #F1F1EF;
+  --border-strong: #D4D4D4;
+  --muted: #F1F1EF;
+  --muted-foreground: #A3A3A3;
+  --text-secondary: #737373;
+
+  /* Semantic Status Tokens (Light Mode) */
+  --success: #16A34A;
+  --success-foreground: #166534;
+  --success-muted: #F0FDF4;
+  --success-border: #BBF7D0;
+
+  --warning: #D97706;
+  --warning-foreground: #92400E;
+  --warning-muted: #FFFBEB;
+  --warning-border: #FDE68A;
+
+  --destructive: #DC2626;
+  --destructive-foreground: #991B1B;
+  --destructive-muted: #FEF2F2;
+  --destructive-border: #FECACA;
+
+  --info: #2563EB;
+  --info-foreground: #1E40AF;
+  --info-muted: #EFF6FF;
+  --info-border: #BFDBFE;
+
+  /* Backward Compatibility Aliases */
+  --bg-primary: var(--background);
   --bg-secondary: #FFFFFF;
-  --text-primary: #15171B;
-  --text-secondary: #9FA4AC;
-  --accent: #FF5A36;
+  --bg-surface: var(--surface);
+  --bg-surface-hover: var(--surface-hover);
+  --text-primary: var(--foreground);
+  --accent: var(--brand);
 }
 
 /* ==================== */
@@ -220,7 +309,7 @@ a::after {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--color-orange);
+  background-color: var(--brand);
   transition: width 0.24s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -234,7 +323,7 @@ a:hover::after {
 
 /* Accessible Focus Styles */
 :focus-visible {
-  outline: 3px solid var(--color-orange);
+  outline: 2px solid var(--brand);
   outline-offset: 2px;
 }
 
@@ -243,7 +332,7 @@ a:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 3px solid var(--color-orange);
+  outline: 2px solid var(--brand);
   outline-offset: 2px;
 }
 
@@ -252,8 +341,8 @@ select:focus-visible {
   position: absolute;
   top: -40px;
   left: 0;
-  background: var(--color-orange);
-  color: var(--color-ivory);
+  background: var(--cta);
+  color: var(--cta-foreground);
   padding: 8px 16px;
   text-decoration: none;
   z-index: 100;
@@ -308,29 +397,42 @@ select {
 
 input::placeholder,
 textarea::placeholder {
-  opacity: 0.7;
-  color: var(--color-gray);
+  opacity: 1;
+  color: var(--muted-foreground);
 }
 
 /* Focus Visible Ring */
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid var(--color-orange);
+  outline: 2px solid var(--brand);
   outline-offset: 2px;
 }
 
-/* Error Message Styling */
+/* Semantic Feedback Messages */
 .error-message {
-  color: #ef4444;
+  color: var(--destructive-foreground);
   font-size: 0.875rem;
   margin-top: 0.5rem;
   display: block;
 }
 
-/* Success Message */
 .success-message {
-  color: #10b981;
+  color: var(--success-foreground);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.warning-message {
+  color: var(--warning-foreground);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.info-message {
+  color: var(--info-foreground);
   font-size: 0.875rem;
   margin-top: 0.5rem;
   display: block;
@@ -338,8 +440,9 @@ select:focus-visible {
 
 /* Tooltip Accessibility */
 [role='tooltip'] {
-  background-color: var(--color-ink);
-  color: var(--color-ivory);
+  background-color: var(--surface-elevated);
+  color: var(--foreground);
+  border: 1px solid var(--border);
   padding: 8px 12px;
   border-radius: var(--radius-sm);
   font-size: 0.875rem;
@@ -348,14 +451,17 @@ select:focus-visible {
 
 /* Better Text Selection */
 ::selection {
-  background-color: var(--color-orange);
-  color: var(--color-ivory);
+  background-color: var(--brand);
+  color: #FFFFFF;
 }
 
 /* High Contrast Mode Support */
 @media (prefers-contrast: more) {
   :root {
-    --color-gray: #6a7279;
+    --border: #52525B;
+    --border-strong: #A1A1AA;
+    --text-secondary: #D4D4D8;
+    --muted-foreground: #A1A1AA;
   }
 
   button,
@@ -368,21 +474,21 @@ select:focus-visible {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-ink);
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-gray);
+  background: var(--border-strong);
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-orange);
+  background: var(--brand);
 }
 
 /* ==================== */

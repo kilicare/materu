@@ -29,7 +29,7 @@ export const Step5Contact: React.FC = () => {
   };
 
   const inputClass =
-    'w-full rounded-lg bg-bg-surface px-6 py-3 text-ivory placeholder-gray/50 focus:outline-none focus:ring-2 focus:ring-orange border border-gray/20';
+    'w-full rounded-lg bg-surface px-6 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand border border-border transition-all';
 
   return (
     <motion.div
@@ -49,7 +49,7 @@ export const Step5Contact: React.FC = () => {
 
       {/* Name */}
       <motion.div variants={itemVariants}>
-        <label className="block mb-2 font-semibold text-ivory">
+        <label className="block mb-2 font-semibold text-foreground">
           Full Name *
         </label>
         <input
@@ -64,7 +64,7 @@ export const Step5Contact: React.FC = () => {
 
       {/* Email */}
       <motion.div variants={itemVariants}>
-        <label className="block mb-2 font-semibold text-ivory">
+        <label className="block mb-2 font-semibold text-foreground">
           Email Address *
         </label>
         <input
@@ -79,7 +79,7 @@ export const Step5Contact: React.FC = () => {
 
       {/* Phone */}
       <motion.div variants={itemVariants}>
-        <label className="block mb-2 font-semibold text-ivory">
+        <label className="block mb-2 font-semibold text-foreground">
           Phone Number *
         </label>
         <input
@@ -94,7 +94,7 @@ export const Step5Contact: React.FC = () => {
 
       {/* Company */}
       <motion.div variants={itemVariants}>
-        <label className="block mb-2 font-semibold text-ivory">
+        <label className="block mb-2 font-semibold text-foreground">
           Company Name *
         </label>
         <input
@@ -109,7 +109,7 @@ export const Step5Contact: React.FC = () => {
 
       {/* Role */}
       <motion.div variants={itemVariants}>
-        <label className="block mb-3 font-semibold text-ivory">
+        <label className="block mb-3 font-semibold text-foreground">
           Your Role *
         </label>
         <select
@@ -118,9 +118,9 @@ export const Step5Contact: React.FC = () => {
           className={inputClass}
           aria-label="Your role"
         >
-          <option value="">Select your role</option>
+          <option value="" className="bg-surface text-foreground">Select your role</option>
           {roles.map(role => (
-            <option key={role} value={role}>
+            <option key={role} value={role} className="bg-surface text-foreground">
               {role}
             </option>
           ))}
@@ -129,10 +129,10 @@ export const Step5Contact: React.FC = () => {
 
       <motion.div
         variants={itemVariants}
-        className="p-6 rounded-lg bg-orange/10 border border-orange/20"
+        className="p-6 rounded-lg bg-brand-muted border border-brand/20"
       >
-        <p className="text-sm text-gray">
-          🔒 <strong>Privacy:</strong> We&apos;ll never share your information. It&apos;s
+        <p className="text-sm text-text-secondary">
+          🔒 <strong className="text-foreground">Privacy:</strong> We&apos;ll never share your information. It&apos;s
           used only to respond to your inquiry.
         </p>
       </motion.div>

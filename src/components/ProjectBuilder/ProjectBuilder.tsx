@@ -191,10 +191,10 @@ export const ProjectBuilder: React.FC<ProjectBuilderProps> = ({
               }}
               className={`flex-shrink-0 flex items-center gap-3 px-6 py-3 rounded-full font-semibold transition-all ${
                 formData.currentStep === step.number
-                  ? 'bg-orange text-ivory scale-105'
+                  ? 'bg-brand text-brand-foreground scale-105 shadow-sm'
                   : index < formData.currentStep
-                  ? 'bg-gray/20 text-orange cursor-pointer hover:bg-gray/30'
-                  : 'bg-bg-surface text-gray'
+                  ? 'bg-surface-elevated border border-brand/30 text-brand cursor-pointer hover:bg-surface-hover'
+                  : 'bg-surface border border-border text-muted-foreground'
               }`}
               disabled={index >= formData.currentStep}
               whileHover={index < formData.currentStep ? { scale: 1.05 } : {}}
@@ -206,9 +206,9 @@ export const ProjectBuilder: React.FC<ProjectBuilderProps> = ({
         </div>
 
         {/* Linear Progress Bar */}
-        <div className="w-full h-1 bg-gray/20 rounded-full overflow-hidden">
+        <div className="w-full h-1.5 bg-surface-elevated border border-border rounded-full overflow-hidden">
           <motion.div
-            className="h-full bg-gradient-to-r from-orange to-orange/60"
+            className="h-full bg-gradient-to-r from-brand to-brand/60"
             initial={{ width: 0 }}
             animate={{
               width: `${((formData.currentStep - 1) / (steps.length - 1)) * 100}%`,
@@ -223,7 +223,7 @@ export const ProjectBuilder: React.FC<ProjectBuilderProps> = ({
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-6 p-4 rounded-lg bg-red-500/20 border border-red-500/50 text-red-200"
+          className="mb-6 p-4 rounded-lg bg-destructive-muted border border-destructive-border text-destructive-foreground font-medium"
         >
           {error}
         </motion.div>
@@ -237,7 +237,7 @@ export const ProjectBuilder: React.FC<ProjectBuilderProps> = ({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
-          className="mb-12 p-8 rounded-2xl bg-bg-surface border border-gray/20"
+          className="mb-12 p-8 rounded-2xl bg-surface border border-border"
         >
           {renderStepComponent()}
         </motion.div>

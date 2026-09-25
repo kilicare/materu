@@ -100,7 +100,7 @@ export const CustomCursor: React.FC = () => {
     <>
       {/* Cursor Dot */}
       <motion.div
-        className="pointer-events-none fixed z-50 h-2 w-2 rounded-full bg-orange"
+        className="pointer-events-none fixed z-50 h-2 w-2 rounded-full bg-brand"
         animate={{
           x: position.x - 4,
           y: position.y - 4,
@@ -114,7 +114,7 @@ export const CustomCursor: React.FC = () => {
 
       {/* Cursor Ring */}
       <motion.div
-        className="pointer-events-none fixed z-50 h-8 w-8 rounded-full border-2 border-orange"
+        className="pointer-events-none fixed z-50 h-8 w-8 rounded-full border-2 border-brand"
         animate={{
           x: position.x - 16,
           y: position.y - 16,

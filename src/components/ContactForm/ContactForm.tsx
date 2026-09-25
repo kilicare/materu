@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/Button';
+import { validateEmail, validatePhone } from '@/lib/utils';
 
 interface FormData {
   name: string;
@@ -10,7 +11,14 @@ interface FormData {
   phone: string;
   subject: string;
   message: string;
-  honeypot: string;
+  honeypot: string; // Anti-spam field
+}
+
+interface FormErrors {
+  name?: string;
+  email?: string;
+  subject?: string;
+  message?: string;
 }
 
 export const ContactForm: React.FC = () => {
@@ -23,21 +31,36 @@ export const ContactForm: React.FC = () => {
     honeypot: '',
   });
 
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [errors, setErrors] = useState<Partial<FormData>>({});
 
-  const validateForm = (): boolean => {
-    const newErrors: Partial<FormData> = {};
+  const validate = (): boolean => {
+    const newErrors: FormErrors = {};
 
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
-    if (!formData.email.trim()) newErrors.email = 'Email is required';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
-      newErrors.email = 'Invalid email';
-    if (!formData.subject.trim()) newErrors.subject = 'Subject is required';
-    if (!formData.message.trim()) newErrors.message = 'Message is required';
-    if (formData.message.trim().length < 10)
+    if (!formData.name.trim()) {
+      newErrors.name = 'Please enter your name';
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Please enter your email';
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+
+    if (formData.phone && !validatePhone(formData.phone)) {
+      // Optional, but if provided, validate
+    }
+
+    if (!formData.subject.trim()) {
+      newErrors.subject = 'Please enter a subject';
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = 'Please enter a message';
+    } else if (formData.message.trim().length < 10) {
       newErrors.message = 'Message must be at least 10 characters';
+    }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -47,40 +70,29 @@ export const ContactForm: React.FC = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
     // Clear error for this field
-    setErrors(prev => ({
-      ...prev,
-      [name]: undefined,
-    }));
+    if (errors[name as keyof FormErrors]) {
+      setErrors(prev => ({ ...prev, [name]: undefined }));
+    }
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Honeypot check
+    // Check honeypot for spam
     if (formData.honeypot) {
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: '',
-        honeypot: '',
-      });
+      console.warn('Bot submission detected');
       return;
     }
 
-    if (!validateForm()) return;
+    if (!validate()) {
+      return;
+    }
 
     setIsSubmitting(true);
 
     try {
-      // Send to backend API
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -95,24 +107,21 @@ export const ContactForm: React.FC = () => {
         }),
       });
 
-      if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          subject: '',
-          message: '',
-          honeypot: '',
-        });
-
-        // Reset status after 5 seconds
-        setTimeout(() => setSubmitStatus('idle'), 5000);
-      } else {
-        setSubmitStatus('error');
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
       }
+
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+        honeypot: '',
+      });
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('Submission error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -125,7 +134,6 @@ export const ContactForm: React.FC = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2,
       },
     },
   };
@@ -135,9 +143,7 @@ export const ContactForm: React.FC = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-      },
+      transition: { duration: 0.4 },
     },
   };
 
@@ -146,18 +152,18 @@ export const ContactForm: React.FC = () => {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="text-center py-12"
+        className="text-center py-12 p-8 rounded-2xl bg-surface border border-success-border"
       >
-        <div className="text-5xl mb-4">✓</div>
-        <h3 className="text-2xl font-bold text-orange mb-3">
+        <div className="text-5xl mb-4 text-success-foreground">✓</div>
+        <h3 className="text-2xl font-bold text-success-foreground mb-3">
           Message Received!
         </h3>
-        <p className="text-gray mb-6">
+        <p className="text-text-secondary mb-6">
           Thanks for reaching out. We&apos;ll get back to you within 24 hours.
         </p>
         <button
           onClick={() => setSubmitStatus('idle')}
-          className="text-orange hover:text-ivory transition-colors"
+          className="text-brand hover:text-foreground transition-colors font-semibold"
         >
           Send another message →
         </button>
@@ -170,25 +176,28 @@ export const ContactForm: React.FC = () => {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="text-center py-12"
+        className="text-center py-12 p-8 rounded-2xl bg-surface border border-destructive-border"
       >
-        <div className="text-5xl mb-4">✕</div>
-        <h3 className="text-2xl font-bold text-red-500 mb-3">
+        <div className="text-5xl mb-4 text-destructive-foreground">✕</div>
+        <h3 className="text-2xl font-bold text-destructive-foreground mb-3">
           Oops, Something Went Wrong
         </h3>
-        <p className="text-gray mb-6">
+        <p className="text-text-secondary mb-6">
           We had trouble sending your message. Please try again or reach out
           directly at hello@materu.com
         </p>
         <button
           onClick={() => setSubmitStatus('idle')}
-          className="text-orange hover:text-ivory transition-colors"
+          className="text-brand hover:text-foreground transition-colors font-semibold"
         >
           Try Again →
         </button>
       </motion.div>
     );
   }
+
+  const inputBaseClass =
+    'w-full rounded-lg bg-surface px-6 py-4 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 transition-all';
 
   return (
     <motion.form
@@ -212,7 +221,7 @@ export const ContactForm: React.FC = () => {
 
       {/* Name */}
       <motion.div variants={itemVariants}>
-        <label className="block mb-2 font-semibold text-ivory">
+        <label className="block mb-2 font-semibold text-foreground">
           Full Name *
         </label>
         <input
@@ -220,21 +229,21 @@ export const ContactForm: React.FC = () => {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          className={`w-full rounded-lg bg-bg-surface px-6 py-4 text-ivory placeholder-gray/50 focus:outline-none focus:ring-2 transition-all ${
+          className={`${inputBaseClass} ${
             errors.name
-              ? 'focus:ring-red-500 border border-red-500'
-              : 'focus:ring-orange'
+              ? 'border border-destructive focus:ring-destructive'
+              : 'border border-border focus:ring-brand focus:border-brand'
           }`}
           placeholder="Your name"
         />
         {errors.name && (
-          <p className="text-red-500 text-sm mt-2">{errors.name}</p>
+          <p className="text-destructive-foreground text-sm mt-2 font-medium">{errors.name}</p>
         )}
       </motion.div>
 
       {/* Email */}
       <motion.div variants={itemVariants}>
-        <label className="block mb-2 font-semibold text-ivory">
+        <label className="block mb-2 font-semibold text-foreground">
           Email Address *
         </label>
         <input
@@ -242,21 +251,21 @@ export const ContactForm: React.FC = () => {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className={`w-full rounded-lg bg-bg-surface px-6 py-4 text-ivory placeholder-gray/50 focus:outline-none focus:ring-2 transition-all ${
+          className={`${inputBaseClass} ${
             errors.email
-              ? 'focus:ring-red-500 border border-red-500'
-              : 'focus:ring-orange'
+              ? 'border border-destructive focus:ring-destructive'
+              : 'border border-border focus:ring-brand focus:border-brand'
           }`}
           placeholder="your@email.com"
         />
         {errors.email && (
-          <p className="text-red-500 text-sm mt-2">{errors.email}</p>
+          <p className="text-destructive-foreground text-sm mt-2 font-medium">{errors.email}</p>
         )}
       </motion.div>
 
       {/* Phone */}
       <motion.div variants={itemVariants}>
-        <label className="block mb-2 font-semibold text-ivory">
+        <label className="block mb-2 font-semibold text-foreground">
           Phone Number
         </label>
         <input
@@ -264,14 +273,14 @@ export const ContactForm: React.FC = () => {
           name="phone"
           value={formData.phone}
           onChange={handleChange}
-          className="w-full rounded-lg bg-bg-surface px-6 py-4 text-ivory placeholder-gray/50 focus:outline-none focus:ring-2 focus:ring-orange transition-all"
+          className={`${inputBaseClass} border border-border focus:ring-brand focus:border-brand`}
           placeholder="+1 (555) 000-0000"
         />
       </motion.div>
 
       {/* Subject */}
       <motion.div variants={itemVariants}>
-        <label className="block mb-2 font-semibold text-ivory">
+        <label className="block mb-2 font-semibold text-foreground">
           Subject *
         </label>
         <input
@@ -279,21 +288,21 @@ export const ContactForm: React.FC = () => {
           name="subject"
           value={formData.subject}
           onChange={handleChange}
-          className={`w-full rounded-lg bg-bg-surface px-6 py-4 text-ivory placeholder-gray/50 focus:outline-none focus:ring-2 transition-all ${
+          className={`${inputBaseClass} ${
             errors.subject
-              ? 'focus:ring-red-500 border border-red-500'
-              : 'focus:ring-orange'
+              ? 'border border-destructive focus:ring-destructive'
+              : 'border border-border focus:ring-brand focus:border-brand'
           }`}
           placeholder="What&apos;s this about?"
         />
         {errors.subject && (
-          <p className="text-red-500 text-sm mt-2">{errors.subject}</p>
+          <p className="text-destructive-foreground text-sm mt-2 font-medium">{errors.subject}</p>
         )}
       </motion.div>
 
       {/* Message */}
       <motion.div variants={itemVariants}>
-        <label className="block mb-2 font-semibold text-ivory">
+        <label className="block mb-2 font-semibold text-foreground">
           Message *
         </label>
         <textarea
@@ -301,15 +310,15 @@ export const ContactForm: React.FC = () => {
           value={formData.message}
           onChange={handleChange}
           rows={6}
-          className={`w-full rounded-lg bg-bg-surface px-6 py-4 text-ivory placeholder-gray/50 focus:outline-none focus:ring-2 transition-all resize-none ${
+          className={`${inputBaseClass} resize-none ${
             errors.message
-              ? 'focus:ring-red-500 border border-red-500'
-              : 'focus:ring-orange'
+              ? 'border border-destructive focus:ring-destructive'
+              : 'border border-border focus:ring-brand focus:border-brand'
           }`}
           placeholder="Tell us about your project..."
         />
         {errors.message && (
-          <p className="text-red-500 text-sm mt-2">{errors.message}</p>
+          <p className="text-destructive-foreground text-sm mt-2 font-medium">{errors.message}</p>
         )}
       </motion.div>
 
@@ -329,7 +338,7 @@ export const ContactForm: React.FC = () => {
 
       <motion.p
         variants={itemVariants}
-        className="text-center text-sm text-gray"
+        className="text-center text-sm text-text-secondary"
       >
         We&apos;ll get back to you within 24 hours.
       </motion.p>

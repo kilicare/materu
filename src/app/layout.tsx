@@ -66,7 +66,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" />
       </head>
 
-      <body className="bg-ink text-ivory">
+      <body className="bg-background text-foreground antialiased selection:bg-brand selection:text-white">
         <LayoutContent>{children}</LayoutContent>
       </body>
     </html>

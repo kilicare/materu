@@ -81,23 +81,23 @@ export const WhatWeBuild: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.4 }}
-        className="mt-16 rounded-3xl border border-white/[0.08] bg-bg-surface/90 backdrop-blur-sm p-8 md:mt-20 md:p-12 shadow-xl"
+        className="mt-16 rounded-3xl border border-border bg-surface/90 backdrop-blur-sm p-8 md:mt-20 md:p-12 shadow-xl"
       >
         <div className="flex items-start gap-6">
           <div className="text-5xl">{selectedSolution.icon}</div>
 
           <div className="flex-1">
-            <h3 className="mb-3 text-3xl font-bold text-ivory">
+            <h3 className="mb-3 text-3xl font-bold text-foreground">
               {selectedSolution.title}
             </h3>
 
-            <p className="mb-8 text-lg text-gray">
+            <p className="mb-8 text-lg text-text-secondary">
               {selectedSolution.description}
             </p>
 
             {/* Examples */}
             <div className="space-y-3">
-              <p className="text-sm font-semibold text-orange uppercase tracking-wide">
+              <p className="text-sm font-semibold text-brand uppercase tracking-wide">
                 What we build:
               </p>
               <div className="flex flex-wrap gap-3">
@@ -107,7 +107,7 @@ export const WhatWeBuild: React.FC = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.1 }}
-                    className="inline-block rounded-full bg-orange/10 px-4 py-2 text-sm font-medium text-orange"
+                    className="inline-block rounded-full bg-brand/10 border border-brand/20 px-4 py-2 text-sm font-medium text-brand"
                   >
                     {example}
                   </motion.span>
@@ -118,7 +118,7 @@ export const WhatWeBuild: React.FC = () => {
             {/* CTA */}
             <motion.a
               href={selectedSolution.href}
-              className="mt-8 inline-flex items-center gap-2 font-semibold text-orange hover:text-ivory transition-colors"
+              className="mt-8 inline-flex items-center gap-2 font-semibold text-brand hover:text-foreground transition-colors"
               whileHover={{ x: 8 }}
             >
               Explore {selectedSolution.title} →
@@ -134,9 +134,9 @@ export const WhatWeBuild: React.FC = () => {
         viewport={{ once: true }}
         className="mt-16 text-center"
       >
-        <p className="text-gray">
+        <p className="text-text-secondary">
           Not sure which one?{' '}
-          <a href="/start-a-project" className="font-semibold text-orange hover:text-ivory transition-colors">
+          <a href="/start-a-project" className="font-semibold text-brand hover:text-foreground transition-colors">
             Start a guided discovery →
           </a>
         </p>

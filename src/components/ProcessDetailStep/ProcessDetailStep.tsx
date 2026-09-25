@@ -50,12 +50,12 @@ export const ProcessDetailStep: React.FC<ProcessDetailStepProps> = ({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      className="mb-8 overflow-hidden rounded-2xl border border-gray/20 bg-bg-surface"
+      className="mb-8 overflow-hidden rounded-2xl border border-border bg-surface shadow-sm"
     >
       {/* Header */}
       <motion.button
         onClick={onToggle}
-        className="w-full p-8 text-left hover:bg-bg-surface-hover transition-colors"
+        className="w-full p-8 text-left hover:bg-surface-hover transition-colors"
         whileHover={{ x: 4 }}
       >
         <div className="flex items-start justify-between gap-4">
@@ -65,23 +65,23 @@ export const ProcessDetailStep: React.FC<ProcessDetailStepProps> = ({
               <motion.div
                 className={`flex h-12 w-12 items-center justify-center rounded-full font-bold transition-all ${
                   isExpanded
-                    ? 'bg-orange text-ivory scale-110'
-                    : 'bg-gray/20 text-orange'
+                    ? 'bg-brand text-white scale-110 shadow-md'
+                    : 'bg-surface-elevated text-brand border border-border'
                 }`}
                 animate={isExpanded ? { scale: 1.1 } : { scale: 1 }}
               >
                 {step.number}
               </motion.div>
               <div>
-                <Label className="uppercase text-orange">{step.duration}</Label>
+                <Label className="uppercase text-brand font-semibold">{step.duration}</Label>
               </div>
             </div>
 
             {/* Title & Description */}
-            <h3 className="mb-3 text-3xl font-bold text-ivory">
+            <h3 className="mb-3 text-3xl font-bold text-foreground">
               {step.title}
             </h3>
-            <p className="text-gray">{step.description}</p>
+            <p className="text-text-secondary">{step.description}</p>
           </div>
 
           {/* Chevron */}
@@ -97,7 +97,7 @@ export const ProcessDetailStep: React.FC<ProcessDetailStepProps> = ({
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
-              className="text-orange"
+              className="text-brand"
             >
               <polyline points="6 9 12 15 18 9" />
             </svg>
@@ -109,7 +109,7 @@ export const ProcessDetailStep: React.FC<ProcessDetailStepProps> = ({
       <motion.div
         variants={contentVariants}
         animate={isExpanded ? 'expanded' : 'collapsed'}
-        className="overflow-hidden border-t border-gray/20"
+        className="overflow-hidden border-t border-border"
       >
         <div className="px-8 py-8 space-y-12">
           {/* Long Description */}
@@ -132,10 +132,10 @@ export const ProcessDetailStep: React.FC<ProcessDetailStepProps> = ({
                   initial={{ opacity: 0, y: 10 }}
                   animate={isExpanded ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                   transition={{ delay: idx * 0.1 }}
-                  className="rounded-lg bg-ink/30 p-6 border border-orange/10"
+                  className="rounded-xl bg-surface-elevated/60 p-6 border border-brand/15"
                 >
-                  <h5 className="mb-2 font-bold text-orange">{activity.title}</h5>
-                  <p className="text-sm text-gray">{activity.description}</p>
+                  <h5 className="mb-2 font-bold text-brand">{activity.title}</h5>
+                  <p className="text-sm text-text-secondary">{activity.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -154,9 +154,9 @@ export const ProcessDetailStep: React.FC<ProcessDetailStepProps> = ({
                     initial={{ opacity: 0, x: -10 }}
                     animate={isExpanded ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex items-center gap-3 text-gray"
+                    className="flex items-center gap-3 text-text-secondary"
                   >
-                    <span className="text-orange">✓</span>
+                    <span className="text-brand">✓</span>
                     <span>{item}</span>
                   </motion.li>
                 ))}
@@ -174,9 +174,9 @@ export const ProcessDetailStep: React.FC<ProcessDetailStepProps> = ({
                     initial={{ opacity: 0, x: -10 }}
                     animate={isExpanded ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex items-center gap-3 text-gray"
+                    className="flex items-center gap-3 text-text-secondary"
                   >
-                    <span className="text-orange">→</span>
+                    <span className="text-brand">→</span>
                     <span>{detail}</span>
                   </motion.li>
                 ))}

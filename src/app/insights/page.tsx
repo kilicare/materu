@@ -62,7 +62,7 @@ export default function InsightsPage() {
             className="object-cover"
           />
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/50 to-ink/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background/80" />
         </div>
 
         <motion.div
@@ -101,8 +101,8 @@ export default function InsightsPage() {
               className={`rounded-full px-6 py-2 font-semibold transition-all duration-base ${
                 (selectedCategory === category.id && category.id !== 'all') ||
                 (!selectedCategory && category.id === 'all')
-                  ? 'bg-orange text-ivory'
-                  : 'bg-bg-surface text-gray hover:text-orange hover:border-orange/50 border border-gray/20'
+                  ? 'bg-brand text-white shadow-sm'
+                  : 'bg-surface text-text-secondary hover:text-brand hover:border-brand/50 border border-border'
               }`}
             >
               {category.label}
@@ -123,7 +123,7 @@ export default function InsightsPage() {
           {filteredPosts.map((post) => (
             <motion.div key={post.id} variants={itemVariants}>
               <Link href={`/insights/${post.slug}`} className="hoverable">
-                <article className="group grid gap-8 md:grid-cols-3 rounded-3xl overflow-hidden bg-bg-surface border border-white/[0.08] hover:border-orange/50 transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(255,90,54,0.15)] hover:-translate-y-1">
+                <article className="group grid gap-8 md:grid-cols-3 rounded-3xl overflow-hidden bg-surface border border-border hover:border-brand/50 transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(249,115,22,0.15)] hover:-translate-y-1">
                   {/* Image */}
                   <div className="relative h-64 w-full md:col-span-1 overflow-hidden rounded-t-3xl md:rounded-tr-none md:rounded-l-3xl">
                     <Image
@@ -132,7 +132,7 @@ export default function InsightsPage() {
                       fill
                       className="object-cover group-hover:scale-106 transition-transform duration-500 ease-out"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-bg-surface via-transparent to-transparent md:hidden" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent md:hidden" />
                   </div>
 
                   {/* Content */}
@@ -140,35 +140,35 @@ export default function InsightsPage() {
                     {/* Category & Meta */}
                     <div>
                       <div className="flex items-center gap-4 mb-4">
-                        <Label className="uppercase text-orange">
+                        <Label className="uppercase text-brand font-semibold">
                           {post.category}
                         </Label>
                         <Metadata>{post.readTime} min read</Metadata>
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-2xl font-bold text-ivory mb-4 hover:text-orange transition-colors">
+                      <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-brand transition-colors">
                         {post.title}
                       </h3>
 
                       {/* Excerpt */}
-                      <p className="text-gray mb-6 line-clamp-2">
+                      <p className="text-text-secondary mb-6 line-clamp-2">
                         {post.excerpt}
                       </p>
                     </div>
 
                     {/* Author & Date */}
-                    <div className="flex items-center justify-between pt-6 border-t border-gray/20">
+                    <div className="flex items-center justify-between pt-6 border-t border-border">
                       <div className="flex items-center gap-3">
                         <Image
                           src={post.authorImage}
                           alt={post.author}
                           width={40}
                           height={40}
-                          className="rounded-full"
+                          className="rounded-full border border-border"
                         />
                         <div>
-                          <p className="text-sm font-semibold text-ivory">
+                          <p className="text-sm font-semibold text-foreground">
                             {post.author}
                           </p>
                           <Metadata>
@@ -179,7 +179,7 @@ export default function InsightsPage() {
 
                       <motion.div
                         whileHover={{ x: 4 }}
-                        className="text-orange font-bold"
+                        className="text-brand font-bold"
                       >
                         Read →
                       </motion.div>
@@ -197,7 +197,7 @@ export default function InsightsPage() {
             variants={itemVariants}
             className="text-center py-16"
           >
-            <p className="text-gray mb-6">No articles in this category yet.</p>
+            <p className="text-text-secondary mb-6">No articles in this category yet.</p>
             <Button
               variant="secondary"
               onClick={() => setSelectedCategory(null)}
@@ -241,7 +241,7 @@ export default function InsightsPage() {
             <input
               type="email"
               placeholder="your@email.com"
-              className="flex-1 rounded-full bg-bg-surface px-6 py-3 text-ivory placeholder-gray/50 focus:outline-none focus:ring-2 focus:ring-orange"
+              className="flex-1 rounded-full bg-surface border border-border px-6 py-3 text-foreground placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-brand shadow-inner"
             />
             <Button variant="primary">Subscribe</Button>
           </motion.form>

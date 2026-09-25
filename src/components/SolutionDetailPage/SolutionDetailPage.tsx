@@ -62,7 +62,7 @@ export const SolutionDetailPage: React.FC<SolutionDetailPageProps> = ({
             className="object-cover"
           />
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/50 to-ink/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background/80" />
         </div>
 
         <motion.div
@@ -131,13 +131,13 @@ export const SolutionDetailPage: React.FC<SolutionDetailPageProps> = ({
               <motion.div
                 key={feature.id}
                 variants={itemVariants}
-                className="rounded-2xl border border-gray/20 bg-bg-surface p-8 hover:border-orange/50 transition-all duration-base hover:shadow-lg"
+                className="rounded-2xl border border-border bg-surface p-8 hover:border-brand/50 transition-all duration-base hover:shadow-lg"
               >
                 <div className="mb-4 text-5xl">{feature.icon}</div>
-                <h3 className="mb-3 text-xl font-bold text-ivory">
+                <h3 className="mb-3 text-xl font-bold text-foreground">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-gray">{feature.description}</p>
+                <p className="text-sm text-text-secondary">{feature.description}</p>
               </motion.div>
             ))}
           </Grid>
@@ -177,23 +177,23 @@ export const SolutionDetailPage: React.FC<SolutionDetailPageProps> = ({
               <motion.div
                 key={useCase.id}
                 variants={itemVariants}
-                className="rounded-2xl border border-orange/20 bg-white p-8 md:p-12"
+                className="rounded-2xl border border-border bg-surface p-8 md:p-12 shadow-sm"
               >
                 <div className="grid gap-8 md:grid-cols-2">
                   {/* Left Side */}
                   <div>
                     <div className="mb-4 text-5xl">{useCase.icon}</div>
-                    <h3 className="mb-2 text-2xl font-bold text-ink">
+                    <h3 className="mb-2 text-2xl font-bold text-foreground">
                       {useCase.title}
                     </h3>
-                    <Badge variant="secondary" size="sm">
+                    <Badge variant="brand" size="sm">
                       {useCase.industry}
                     </Badge>
 
                     <div className="mt-6 space-y-4">
                       <div>
-                        <Label className="uppercase text-ink">Problem</Label>
-                        <p className="mt-2 text-ink">{useCase.problem}</p>
+                        <Label className="uppercase text-brand font-semibold">Problem</Label>
+                        <p className="mt-2 text-text-secondary">{useCase.problem}</p>
                       </div>
                     </div>
                   </div>
@@ -202,10 +202,10 @@ export const SolutionDetailPage: React.FC<SolutionDetailPageProps> = ({
                   <div className="flex items-center">
                     <div className="space-y-4 w-full">
                       <div className="flex items-start gap-4">
-                        <span className="text-2xl">✓</span>
+                        <span className="text-2xl text-brand">✓</span>
                         <div>
-                          <Label className="uppercase text-ink">Solution</Label>
-                          <p className="mt-2 text-ink">{useCase.solution}</p>
+                          <Label className="uppercase text-brand font-semibold">Solution</Label>
+                          <p className="mt-2 text-foreground">{useCase.solution}</p>
                         </div>
                       </div>
                     </div>
@@ -238,17 +238,17 @@ export const SolutionDetailPage: React.FC<SolutionDetailPageProps> = ({
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="rounded-full bg-orange/10 px-6 py-3 border border-orange/20"
+                className="rounded-full bg-brand/10 px-6 py-3 border border-brand/20"
               >
-                <span className="font-semibold text-orange">{tech}</span>
+                <span className="font-semibold text-brand">{tech}</span>
               </motion.div>
             ))}
           </motion.div>
 
           <motion.div variants={itemVariants} className="mt-12">
-            <p className="text-gray">
+            <p className="text-text-secondary">
               Industries we serve:{' '}
-              <span className="text-ivory">
+              <span className="text-foreground font-medium">
                 {solution.industries.join(', ')}
               </span>
             </p>

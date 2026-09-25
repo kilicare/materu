@@ -49,7 +49,7 @@ export default function ProcessPage() {
             className="object-cover"
           />
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/50 to-ink/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background/80" />
         </div>
 
         <motion.div
@@ -71,7 +71,7 @@ export default function ProcessPage() {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <p className="text-gray italic">
+            <p className="text-text-secondary italic">
               &ldquo;Your success is our success. We&apos;re invested in getting it right.&rdquo;
             </p>
           </motion.div>
@@ -119,7 +119,7 @@ export default function ProcessPage() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="mt-20 pt-20 border-t border-gray/20"
+          className="mt-20 pt-20 border-t border-border"
         >
           <motion.div variants={itemVariants} className="mb-12 text-center">
             <Heading level="h3">TIMELINE</Heading>
@@ -128,7 +128,7 @@ export default function ProcessPage() {
           {/* Timeline */}
           <div className="relative">
             {/* Background line */}
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-gradient-to-b from-orange to-orange/30" />
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-gradient-to-b from-brand to-brand/30" />
 
             {/* Timeline items */}
             <div className="space-y-12">
@@ -149,23 +149,23 @@ export default function ProcessPage() {
                       index % 2 === 1 ? 'md:order-2' : 'md:order-1'
                     } mb-6 md:mb-0`}
                   >
-                    <div className="rounded-lg bg-bg-surface p-6 border border-orange/20">
+                    <div className="rounded-2xl bg-surface p-6 border border-border shadow-sm">
                       <div className="flex items-center gap-3 mb-3">
                         <span className="text-4xl">{step.icon}</span>
                         <div>
-                          <p className="text-sm text-orange font-bold">
+                          <p className="text-sm text-brand font-bold">
                             {step.duration}
                           </p>
-                          <h4 className="font-bold text-ivory">{step.title}</h4>
+                          <h4 className="font-bold text-foreground">{step.title}</h4>
                         </div>
                       </div>
-                      <p className="text-sm text-gray">{step.description}</p>
+                      <p className="text-sm text-text-secondary">{step.description}</p>
                     </div>
                   </div>
 
                   {/* Timeline dot (visible on desktop) */}
                   <div className={`hidden md:flex md:order-${index % 2 === 1 ? 1 : 2} justify-center`}>
-                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-orange text-ivory font-bold text-lg border-4 border-bg-secondary relative z-10">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand text-white font-bold text-lg border-4 border-surface relative z-10 shadow-md">
                       {step.number}
                     </div>
                   </div>

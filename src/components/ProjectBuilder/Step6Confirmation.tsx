@@ -78,33 +78,33 @@ export const Step6Confirmation: React.FC<Step6ConfirmationProps> = ({
       {/* Project Details */}
       <motion.div
         variants={itemVariants}
-        className="rounded-2xl border border-gray/20 bg-bg-surface p-8"
+        className="rounded-2xl border border-border bg-surface p-8"
       >
-        <h4 className="text-lg font-bold text-orange mb-6">
-          PROJECT DETAILS
+        <h4 className="text-sm font-bold uppercase tracking-wider text-brand mb-6">
+          Project Details
         </h4>
 
         <div className="space-y-4">
-          <div className="flex justify-between items-start pb-4 border-b border-gray/20">
-            <span className="text-gray">Project Type</span>
-            <span className="font-semibold text-ivory text-right">
+          <div className="flex justify-between items-start pb-4 border-b border-border">
+            <span className="text-text-secondary">Project Type</span>
+            <span className="font-semibold text-foreground text-right">
               {categoryLabel} → {subcategoryLabel}
             </span>
           </div>
 
-          <div className="flex justify-between items-start pb-4 border-b border-gray/20">
-            <span className="text-gray">Budget</span>
-            <span className="font-semibold text-ivory">{budgetLabel}</span>
+          <div className="flex justify-between items-start pb-4 border-b border-border">
+            <span className="text-text-secondary">Budget</span>
+            <span className="font-semibold text-foreground">{budgetLabel}</span>
           </div>
 
-          <div className="flex justify-between items-start pb-4 border-b border-gray/20">
-            <span className="text-gray">Timeline</span>
-            <span className="font-semibold text-ivory">{timelineLabel}</span>
+          <div className="flex justify-between items-start pb-4 border-b border-border">
+            <span className="text-text-secondary">Timeline</span>
+            <span className="font-semibold text-foreground">{timelineLabel}</span>
           </div>
 
           <div className="flex justify-between items-start">
-            <span className="text-gray">Description</span>
-            <span className="font-semibold text-ivory text-right max-w-xs">
+            <span className="text-text-secondary">Description</span>
+            <span className="font-semibold text-foreground text-right max-w-xs">
               {formData.projectDescription.substring(0, 100)}
               {formData.projectDescription.length > 100 ? '...' : ''}
             </span>
@@ -115,38 +115,38 @@ export const Step6Confirmation: React.FC<Step6ConfirmationProps> = ({
       {/* Contact Details */}
       <motion.div
         variants={itemVariants}
-        className="rounded-2xl border border-gray/20 bg-bg-surface p-8"
+        className="rounded-2xl border border-border bg-surface p-8"
       >
-        <h4 className="text-lg font-bold text-orange mb-6">
-          CONTACT INFORMATION
+        <h4 className="text-sm font-bold uppercase tracking-wider text-brand mb-6">
+          Contact Information
         </h4>
 
         <div className="space-y-4">
-          <div className="flex justify-between items-start pb-4 border-b border-gray/20">
-            <span className="text-gray">Name</span>
-            <span className="font-semibold text-ivory">{formData.name}</span>
+          <div className="flex justify-between items-start pb-4 border-b border-border">
+            <span className="text-text-secondary">Name</span>
+            <span className="font-semibold text-foreground">{formData.name}</span>
           </div>
 
-          <div className="flex justify-between items-start pb-4 border-b border-gray/20">
-            <span className="text-gray">Email</span>
-            <span className="font-semibold text-ivory">{formData.email}</span>
+          <div className="flex justify-between items-start pb-4 border-b border-border">
+            <span className="text-text-secondary">Email</span>
+            <span className="font-semibold text-foreground">{formData.email}</span>
           </div>
 
-          <div className="flex justify-between items-start pb-4 border-b border-gray/20">
-            <span className="text-gray">Phone</span>
-            <span className="font-semibold text-ivory">{formData.phone}</span>
+          <div className="flex justify-between items-start pb-4 border-b border-border">
+            <span className="text-text-secondary">Phone</span>
+            <span className="font-semibold text-foreground">{formData.phone}</span>
           </div>
 
-          <div className="flex justify-between items-start pb-4 border-b border-gray/20">
-            <span className="text-gray">Company</span>
-            <span className="font-semibold text-ivory">
+          <div className="flex justify-between items-start pb-4 border-b border-border">
+            <span className="text-text-secondary">Company</span>
+            <span className="font-semibold text-foreground">
               {formData.company}
             </span>
           </div>
 
           <div className="flex justify-between items-start">
-            <span className="text-gray">Role</span>
-            <span className="font-semibold text-ivory">{formData.role}</span>
+            <span className="text-text-secondary">Role</span>
+            <span className="font-semibold text-foreground">{formData.role}</span>
           </div>
         </div>
       </motion.div>
@@ -166,7 +166,7 @@ export const Step6Confirmation: React.FC<Step6ConfirmationProps> = ({
           {isSubmitting ? 'Submitting...' : 'Submit Project Request →'}
         </Button>
 
-        <p className="text-center text-sm text-gray">
+        <p className="text-center text-sm text-text-secondary">
           We&apos;ll review your information and reach out within 24 hours.
         </p>
       </motion.div>

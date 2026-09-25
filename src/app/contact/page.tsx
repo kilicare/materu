@@ -46,7 +46,7 @@ export default function ContactPage() {
             className="object-cover"
           />
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/50 to-ink/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background/80" />
         </div>
 
         <motion.div
@@ -84,41 +84,41 @@ export default function ContactPage() {
           >
             {/* Email */}
             <motion.div variants={itemVariants}>
-              <h3 className="text-xl font-bold text-ivory mb-3 flex items-center gap-3">
+              <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-3">
                 <span className="text-3xl">📧</span>
                 Email
               </h3>
               <a
                 href="mailto:hello@materu.com"
-                className="text-orange hover:text-ivory transition-colors font-semibold"
+                className="text-brand hover:text-foreground transition-colors font-semibold"
               >
                 hello@materu.com
               </a>
-              <p className="text-sm text-gray mt-2">
+              <p className="text-sm text-text-secondary mt-2">
                 For general inquiries and project discussions
               </p>
             </motion.div>
 
             {/* Phone */}
             <motion.div variants={itemVariants}>
-              <h3 className="text-xl font-bold text-ivory mb-3 flex items-center gap-3">
+              <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-3">
                 <span className="text-3xl">📱</span>
                 Phone
               </h3>
               <a
                 href="tel:+255650745642"
-                className="text-orange hover:text-ivory transition-colors font-semibold"
+                className="text-brand hover:text-foreground transition-colors font-semibold"
               >
                 +255 650 745 642
               </a>
-              <p className="text-sm text-gray mt-2">
+              <p className="text-sm text-text-secondary mt-2">
                 Monday—Friday, 9 AM—6 PM (East Africa Time)
               </p>
             </motion.div>
 
             {/* WhatsApp */}
             <motion.div variants={itemVariants}>
-              <h3 className="text-xl font-bold text-ivory mb-3 flex items-center gap-3">
+              <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-3">
                 <span className="text-3xl">💬</span>
                 WhatsApp
               </h3>
@@ -126,23 +126,23 @@ export default function ContactPage() {
                 href="https://wa.me/255650745642"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-orange hover:text-ivory transition-colors font-semibold"
+                className="text-brand hover:text-foreground transition-colors font-semibold"
               >
                 Chat on WhatsApp
               </a>
-              <p className="text-sm text-gray mt-2">
+              <p className="text-sm text-text-secondary mt-2">
                 For quick questions and updates
               </p>
             </motion.div>
 
             {/* Office */}
             <motion.div variants={itemVariants}>
-              <h3 className="text-xl font-bold text-ivory mb-3 flex items-center gap-3">
+              <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-3">
                 <span className="text-3xl">📍</span>
                 Office
               </h3>
-              <p className="text-ivory font-semibold">MATERU HQ</p>
-              <p className="text-sm text-gray mt-2">
+              <p className="text-foreground font-semibold">MATERU HQ</p>
+              <p className="text-sm text-text-secondary mt-2">
                 Dar es Salaam, Tanzania
                 <br />
                 East Africa
@@ -150,9 +150,9 @@ export default function ContactPage() {
             </motion.div>
 
             {/* Response Time */}
-            <motion.div variants={itemVariants} className="pt-8 border-t border-gray/20">
-              <p className="text-sm text-gray">
-                <span className="text-orange font-semibold">Average Response Time:</span>{' '}
+            <motion.div variants={itemVariants} className="pt-8 border-t border-border">
+              <p className="text-sm text-text-secondary">
+                <span className="text-brand font-semibold">Average Response Time:</span>{' '}
                 4-12 hours during business days. We prioritize every inquiry.
               </p>
             </motion.div>
@@ -209,12 +209,12 @@ export default function ContactPage() {
               >
                 <Link
                   href={link.href}
-                  className="p-6 rounded-2xl bg-bg-surface border border-gray/20 hover:border-orange/50 transition-all duration-base hover:shadow-lg block"
+                  className="p-6 rounded-2xl bg-surface border border-border hover:border-brand/50 transition-all duration-base hover:shadow-lg block group"
                 >
-                  <h3 className="text-lg font-bold text-ivory mb-2 hover:text-orange transition-colors">
+                  <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-brand transition-colors">
                     {link.title} →
                   </h3>
-                  <p className="text-sm text-gray">{link.desc}</p>
+                  <p className="text-sm text-text-secondary">{link.desc}</p>
                 </Link>
               </motion.div>
             ))}

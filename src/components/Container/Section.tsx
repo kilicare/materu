@@ -19,10 +19,10 @@ export const Section: React.FC<SectionProps> = ({
   hasBackgroundImage = false,
 }) => {
   const bgStyles = {
-    primary: 'bg-bg-primary',
-    secondary: 'bg-bg-secondary',
-    surface: 'bg-bg-surface',
-    accent: 'bg-orange',
+    primary: 'bg-background',
+    secondary: 'bg-surface',
+    surface: 'bg-surface-elevated',
+    accent: 'bg-brand',
     transparent: 'bg-transparent',
   };
 

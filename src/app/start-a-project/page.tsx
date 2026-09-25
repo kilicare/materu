@@ -62,7 +62,7 @@ export default function StartProjectPage() {
             className="object-cover"
           />
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/50 to-ink/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background/80" />
         </div>
 
         <motion.div
@@ -123,7 +123,7 @@ export default function StartProjectPage() {
           >
             <a
               href="mailto:hello@materu.com"
-              className="px-8 py-3 rounded-full bg-orange text-ivory font-semibold hover:bg-orange/90 transition-all"
+              className="px-8 py-3 rounded-full bg-cta text-cta-foreground font-semibold hover:bg-cta-hover active:bg-cta-active transition-all shadow-md"
             >
               Email Us
             </a>
@@ -131,7 +131,7 @@ export default function StartProjectPage() {
               href="https://wa.me/255650745642"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3 rounded-full border-2 border-orange text-orange font-semibold hover:bg-orange/10 transition-all"
+              className="px-8 py-3 rounded-full border-2 border-brand text-brand font-semibold hover:bg-brand/10 transition-all"
             >
               WhatsApp
             </a>
